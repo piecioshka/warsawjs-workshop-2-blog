@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WarsawJS Workshop #2 :: Blog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="page" class="container">
+        <section class="flow-text--">
+            <h1 class="grey-text">Mój blog</h1>
+
+            <article class="card-panel">
+                <h2>To jest mój pierwszy wpis</h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque laoreet pulvinar turpis quis elementum. Nunc bibendum, neque laoreet varius volutpat, mi felis gravida massa, nec lacinia lacus neque convallis libero. Cras purus nunc, lacinia vulputate massa id, gravida finibus augue. Ut fermentum lacus in porttitor elementum. Pellentesque non lectus odio. Maecenas tincidunt ipsum vel imperdiet vulputate. Integer consectetur tristique volutpat. In euismod consectetur sem vitae maximus. Curabitur nec neque odio. Nullam at imperdiet erat, eu fringilla leo. Praesent porttitor urna non erat sagittis mattis. Aliquam justo enim, dignissim eget aliquam eget, semper vel lectus.
+                </p>
+            </article>
+
+            <article class="card-panel">
+                <h2>To jest mój drugi wpis</h2>
+
+                <p>
+                    Morbi semper eros sit amet dolor euismod finibus. Aenean id lacus lorem. Maecenas lorem velit, viverra id est in, interdum ultricies purus. Cras eu felis at sapien fringilla aliquam. Vestibulum leo odio, porta sed rhoncus sit amet, faucibus id ex. Cras a porttitor felis. Nunc rutrum nulla a ligula pellentesque, auctor tempus quam fermentum. Suspendisse tempus arcu eget nunc porta, quis tempus risus efficitur. Phasellus dictum finibus lacinia.
+                </p>
+            </article>
+        </section>
+
+        <section class="card-panel">
+            <h1>Dodaj post</h1>
+
+            <form action="#">
+                <div class="input-field">
+                    <i class="material-icons prefix">label_outline</i>
+                    <label for="post-title">Tytuł</label>
+                    <input id="post-title" type="text" placeholder="Tytuł">
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">comment</i>
+                    <label for="post-content">Treść</label>
+                    <textarea id="post-content"
+                            class="materialize-textarea"
+                            placeholder="Treść"></textarea>
+                </div>
+
+                <input class="btn waves-effect waves-light" type="submit"
+                        value="Dodaj nowy post">
+            </form>
+        </section>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
