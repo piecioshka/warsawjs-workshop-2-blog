@@ -4,51 +4,19 @@
 
 ![](http://warsawjs.com/assets/images/logo/logo-transparent-240x240.png)
 
-## Założenia projektu
-
-* Wykorzystać system szablonów
-* Zapisywać posty do `LocalStorage`
-* Wykorzystać zmienną globalną jako agregatu modułów
-* Wykorzystać jak najwięcej składni ES2015+ 
-    * `class`
-    * `arrow function`
-    * `method shorthand definition`
-    * `property shorthand definition`
-    * `let` & `const`
-    * `default parameters`
-    * `template strings`
-    * `Map`, `Set`
-    * `Promise`
-* Dodać walidacją formularza oraz zabezpieczenie przed XSS
-
 ## TODO LIST
 
-### Posty (CRUD+)
+Kolejność realizacji aplikacji:
 
-* [x] Dodawanie pojedynczego posta (C)
-* [x] Prezentacja wielu postów (R)
-* [ ] Prezentacja pojedynczego posta (R)
-* [ ] Edycja pojedynczego posta (U)
-* [ ] Usuwanie pojedynczego posta (D)
-
-### Komentarze (CRUD)
-
-* [ ] Dodawanie pojedynczego komentarza (C)
-* [ ] Prezentacja wielu komentarzy (R)
-* [ ] Edycja pojedynczego komentarza (U)
-* [ ] Usuwanie pojedynczego komentarza (D)
-
-### Systemowe
-
-* Stworzenie routingu: `routy.js`
-* Wykorzystanie Firebase jako bazy danych
-
-## Uwagi
-
-* Można wykorzystać helpery: jQuery, Underscore
-* Wsparcie dla nowoczesnych przeglądarek: Chrome, Firefox, Opera
-* Dodawanie bibliotek za pomocą `npm` albo CDN
-* Serwowanie plików: `http-server` albo `live-server` (w rejestrze `npm`)
+1. [x] Posty: Dodawanie pojedynczego posta (C)
+2. [x] Posty: Prezentacja wielu postów (R)
+3. [ ] Posty: Prezentacja pojedynczego posta (R)
+4. [ ] Komentarze: Dodawanie pojedynczego komentarza (C)
+5. [ ] Komentarze: Prezentacja wielu komentarzy (R)
+6. [ ] Posty: Edycja pojedynczego posta (U)
+7. [ ] Posty: Usuwanie pojedynczego posta (D)
+8. [ ] Komentarze: Edycja pojedynczego komentarza (U)
+9. [ ] Komentarze: Usuwanie pojedynczego komentarza (D)
 
 ## Etapy tworzenia od podstaw (do wykorzystania podczas workshopu)
 
@@ -98,10 +66,17 @@ oraz go renderuje.
 * Wykorzystanie transpilera, np. babel
 * Wykorzystanie bundlera, np. webpack
 * Wykorzystanie captcha przy dodawaniu komentarzy
+* Wpisywanie wyrazów komendami głosowymi (speech recognition)
+* Filtry na brzydkie wyrazy
 
 ## Przydatne linki
 
 * http://materializecss.com/
 * https://cdnjs.com/
+* https://codeshare.io/
+* https://www.codewars.com/users/sign_in
+
+### Biblioteki
+
 * https://mustache.github.io/
 * https://github.com/Olical/EventEmitter
