@@ -1,4 +1,4 @@
-# warsawjs-workshop-blog
+# warsawjs-workshop-2-blog
 
 > Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
 
