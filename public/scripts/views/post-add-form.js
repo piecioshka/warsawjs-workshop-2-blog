@@ -4,7 +4,7 @@
     let runtime = root.blog.runtime;
     let constants = root.blog.constants;
 
-    class AddPostForm {
+    class AddPostFormView {
         constructor() {
             this.$button = document.querySelector('#js-display-form-add-post');
             this.$addPostForm = document.querySelector('#js-post-add-form');
@@ -37,5 +37,5 @@
         }
     }
 
-    root.blog.views.AddPostForm = AddPostForm;
+    root.blog.views.AddPostForm = AddPostFormView;
 }(window));

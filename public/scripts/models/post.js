@@ -2,30 +2,26 @@
     'use strict';
 
     let assert = root.blog.utils.assert;
+    let randomInteger = root.blog.utils.randomInteger;
 
-    class Post {
+    class PostModel {
         constructor(data) {
             assert(typeof data.title === 'string');
             assert(typeof data.body === 'string');
-            assert(typeof data.id === 'number');
 
-            this.data = data;
-            this.$template = document.querySelector('#template-post').innerHTML;
-            this.$dest = document.querySelector('#js-list-of-posts');
+            this.id = randomInteger();
+            this.title = data.title;
+            this.body = data.body;
         }
 
-        compile() {
-            return root.Mustache.render(this.$template, this.data);
-        }
-
-        render() {
-            let compiled = this.compile();
-            let $fake = document.createElement('fake');
-            $fake.innerHTML = compiled;
-            let $article = $fake.firstElementChild;
-            this.$dest.insertBefore($article, this.$dest.firstElementChild);
+        toJSON() {
+            return {
+                id: this.id,
+                title: this.title,
+                body: this.body
+            }
         }
     }
 
-    root.blog.models.Post = Post;
+    root.blog.models.Post = PostModel;
 }(window));

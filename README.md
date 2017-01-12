@@ -14,7 +14,7 @@
     * `arrow function`
     * `method shorthand definition`
     * `property shorthand definition`
-    * `let`, `const`
+    * `let` & `const`
     * `default parameters`
     * `template strings`
     * `Map`, `Set`
@@ -23,18 +23,20 @@
 
 ## TODO LIST
 
-### Posty
+### Posty (CRUD+)
 
-* [x] Prezentacja wielu postów
-* [ ] Prezentacja pojedynczego posta
-* [x] Dodawanie pojedynczego posta
-* [ ] Edycja pojedynczego posta
+* [x] Dodawanie pojedynczego posta (C)
+* [x] Prezentacja wielu postów (R)
+* [ ] Prezentacja pojedynczego posta (R)
+* [ ] Edycja pojedynczego posta (U)
+* [ ] Usuwanie pojedynczego posta (D)
 
-### Komentarze
+### Komentarze (CRUD)
 
-* [ ] Prezentacja wielu komentarzy
-* [ ] Dodawanie pojedynczego komentarza
-* [ ] Edycja pojedynczego komentarza
+* [ ] Dodawanie pojedynczego komentarza (C)
+* [ ] Prezentacja wielu komentarzy (R)
+* [ ] Edycja pojedynczego komentarza (U)
+* [ ] Usuwanie pojedynczego komentarza (D)
 
 ### Systemowe
 
