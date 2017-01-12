@@ -18,9 +18,16 @@
         return parseInt(Math.random() * 10000);
     }
 
+    function removeHTMLTags(htmlString) {
+        let $fake = document.createElement('fake');
+        $fake.innerHTML = htmlString;
+        return $fake.textContent;
+    }
+
     root.blog.utils = {
         assert: assert,
         makeRequest: makeRequest,
-        randomInteger: randomInteger
+        randomInteger: randomInteger,
+        removeHTMLTags: removeHTMLTags
     };
 }(window));

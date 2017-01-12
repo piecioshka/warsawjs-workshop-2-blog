@@ -3,6 +3,7 @@
 
     let runtime = root.blog.runtime;
     let constants = root.blog.constants;
+    let removeHTMLTags = root.blog.utils.removeHTMLTags;
 
     class AddPostFormView {
         constructor() {
@@ -20,13 +21,17 @@
             this.$addPostForm.classList.toggle('hide');
         }
 
+        getFormData() {
+            let title = removeHTMLTags(this.$title.value);
+            let body = removeHTMLTags(this.$body.value);
+
+            return { title, body };
+        }
+
         onSubmit(evt) {
             evt.preventDefault();
 
-            let title = this.$title.value;
-            let body = this.$body.value;
-
-            runtime.emit(constants.post.NEW_POST, { title, body });
+            runtime.emit(constants.post.NEW_POST, this.getFormData());
 
             this.toggleDisplayForm();
             this.clearInputs();
