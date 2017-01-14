@@ -33,6 +33,8 @@
                 this._renderPostList();
                 this._savePosts();
             });
+
+            new AddPostFormComponent();
         }
 
         _savePosts() {
@@ -48,8 +50,7 @@
         }
 
         onPostListHandler() {
-            console.warn('onPostListHandler');
-            new AddPostFormComponent();
+            console.log('[+] Display list of posts');
 
             this._loadPosts(() => {
                 this._renderPostList();
@@ -58,8 +59,7 @@
 
         onPostHandler(context) {
             let postId = Number(context.params.id);
-            console.warn('onPostHandler', postId);
-            new AddPostFormComponent();
+            console.log('[+] Display post: %s', postId);
 
             this._loadPosts(() => {
                 this._renderPostList(postId);
@@ -68,7 +68,7 @@
 
         onPostRemoveHandler(context) {
             let postId = Number(context.params.id);
-            console.warn('onPostRemoveHandler', postId);
+            console.log('%c[+] Remove post: %s', 'color: red', postId);
 
             this.postListModel.removePostModel(postId);
             this._savePosts();
@@ -96,7 +96,9 @@
                     new PostNotFoundComponent(postId);
                 }
             } else {
+                console.group('Render list of posts');
                 this.postListModel.each(renderSinglePost);
+                console.groupEnd('Render posts');
             }
         }
 

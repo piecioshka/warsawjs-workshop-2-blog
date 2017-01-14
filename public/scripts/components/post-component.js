@@ -5,7 +5,7 @@
 
     class PostComponent {
         constructor(post) {
-            console.debug('new PostComponent');
+            console.debug('Render component: PostComponent, id: %s', post.id);
 
             let template = document.querySelector('#template-post').innerHTML;
             let compiledTemplate = Component.compile(template, post);

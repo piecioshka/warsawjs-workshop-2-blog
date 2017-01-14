@@ -7,7 +7,7 @@
 
     class AddPostFormComponent {
         constructor() {
-            console.debug('new AddPostFormComponent');
+            console.debug('Render component: AddPostFormComponent');
 
             this.$button = document.querySelector('#js-display-form-add-post');
             this.$form = document.querySelector('#js-post-add-form');

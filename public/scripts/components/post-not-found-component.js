@@ -5,7 +5,7 @@
 
     class PostNotFoundComponent {
         constructor(postId) {
-            console.debug('new PostNotFoundComponent');
+            console.debug('Render component: PostNotFoundComponent');
 
             let template = document.querySelector('#template-post-not-found').innerHTML;
             let compiledTemplate = Component.compile(template, { id: postId });
