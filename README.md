@@ -16,11 +16,12 @@ Kolejność realizacji aplikacji:
 6. Posty: Usuwanie pojedynczego posta (D)
 7. Komentarze: Usuwanie pojedynczego komentarza (D)
 8. All: Potwierdzenie usuwania posta i komentarza
+9. Komentarze: Prezentacja fikcyjnych awatarów
 
 Dla szybkich:
 
-9. Posty: Edycja pojedynczego posta (U)
-10. Komentarze: Edycja pojedynczego komentarza (U)
+10. Posty: Edycja pojedynczego posta (U)
+11. Komentarze: Edycja pojedynczego komentarza (U)
 
 ## Zadania dodatkowe
 
@@ -45,6 +46,7 @@ Dla szybkich:
 * https://cdnjs.com/
 * https://unpkg.com/
 * https://wzrd.in/
+* http://avatars.adorable.io/
 
 ### Wymiana kodu 
 

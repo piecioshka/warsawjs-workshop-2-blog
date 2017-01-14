@@ -39,6 +39,8 @@
 
                 this._clearPostContainer();
 
+                new AddPostFormComponent();
+
                 this._appendPostModel(post);
                 this._renderPostList();
                 this._savePosts();
@@ -53,6 +55,8 @@
                 };
 
                 this._clearPostContainer();
+
+                new AddPostFormComponent();
 
                 this._appendCommentModel(comment, comment.postId);
                 this._renderPostProfile(comment.postId);

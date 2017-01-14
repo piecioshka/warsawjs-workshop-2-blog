@@ -66,14 +66,24 @@
         </script>
 
         <script id="template-comment" type="text/html">
-            <article class="card-panel" data-comment-id="{{ id }}">
-                <p>
-                    {{ body }}
+            <article class="card-panel row" data-comment-id="{{ id }}">
+                <div class="col s2">
+                    <img
+                            class="circle responsive-img"
+                            src="https://api.adorable.io/avatars/100/{{ id }}.png"/>
+                </div>
 
+                <div class="col s9">
+                    <p>
+                        {{ body }}
+                    </p>
+                </div>
+
+                <div class="col s1">
                     <a href="#!/posts/{{ postId }}/comment/{{ id }}/delete">
-                        <i class="right material-icons">delete</i>
+                        <i class="material-icons">delete</i>
                     </a>
-                </p>
+                </div>
             </article>
         </script>
 
