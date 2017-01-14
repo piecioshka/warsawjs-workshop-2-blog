@@ -1,20 +1,26 @@
 (function (root) {
     'use strict';
 
-    // Jeśli będziemy wykorzystać REST API to ta funkcja się przyda.
-    let makeRequest = root.blog.utils.makeRequest;
+    function makeRequest(url, callback) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.addEventListener('load', () => {
+            callback(null, xhr.response);
+        });
+        xhr.send();
+    }
 
     class RestAdapter {
         constructor(key) {
             this.key = key;
         }
 
-        get() {
-
+        get(callback) {
+            callback(null);
         }
 
-        set(data, callback) {
-
+        set(data, callback = Function) {
+            callback(null);
         }
     }
 

@@ -8,15 +8,18 @@
 
 Kolejność realizacji aplikacji:
 
-1. [x] Posty: Dodawanie pojedynczego posta (C)
-2. [x] Posty: Prezentacja wielu postów (R)
-3. [ ] Posty: Prezentacja pojedynczego posta (R)
-4. [ ] Komentarze: Dodawanie pojedynczego komentarza (C)
-5. [ ] Komentarze: Prezentacja wielu komentarzy (R)
-6. [ ] Posty: Edycja pojedynczego posta (U)
-7. [ ] Posty: Usuwanie pojedynczego posta (D)
-8. [ ] Komentarze: Edycja pojedynczego komentarza (U)
-9. [ ] Komentarze: Usuwanie pojedynczego komentarza (D)
+1. Posty: Dodawanie pojedynczego posta (C)
+2. Posty: Prezentacja wielu postów (R)
+3. Posty: Prezentacja pojedynczego posta (R)
+4. Komentarze: Dodawanie pojedynczego komentarza (C)
+5. Komentarze: Prezentacja wielu komentarzy (R)
+
+Dla chętnych:
+
+6. Posty: Edycja pojedynczego posta (U)
+7. Posty: Usuwanie pojedynczego posta (D)
+8. Komentarze: Edycja pojedynczego komentarza (U)
+9. Komentarze: Usuwanie pojedynczego komentarza (D)
 
 ## Etapy tworzenia od podstaw (do wykorzystania podczas workshopu)
 

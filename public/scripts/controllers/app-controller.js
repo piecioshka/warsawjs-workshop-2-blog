@@ -25,7 +25,7 @@
 
             new AddPostFormComponent();
 
-            runtime.PostsService.fetch((postList) => {
+            runtime.PostsService.fetch((error, postList) => {
                 postList.forEach(this.createPost, this);
             });
 

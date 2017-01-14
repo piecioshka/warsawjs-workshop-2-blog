@@ -15,12 +15,12 @@
                 console.error(e);
             }
 
-            callback(posts || []);
+            callback(null, posts || []);
         }
 
         set(data, callback = Function) {
             root.localStorage.setItem(this.key, JSON.stringify(data));
-            callback();
+            callback(null);
         }
     }
 
