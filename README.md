@@ -43,6 +43,7 @@ Dla szybkich:
 * http://materializecss.com/
 * https://cdnjs.com/
 * https://unpkg.com/
+* https://wzrd.in/
 
 ### Wymiana kodu 
 
@@ -52,4 +53,6 @@ Dla szybkich:
 ### Biblioteki
 
 * https://mustache.github.io/
-* https://github.com/Olical/EventEmitter
+* https://github.com/piecioshka/super-event-emitter
+* https://github.com/baseprime/grapnel
+* https://github.com/kelektiv/node-uuid

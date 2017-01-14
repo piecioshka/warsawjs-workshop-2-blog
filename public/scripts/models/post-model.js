@@ -2,14 +2,13 @@
     'use strict';
 
     let assert = root.blog.utils.assert;
-    let randomInteger = root.blog.utils.randomInteger;
 
     class PostModel {
         constructor(data) {
             assert(typeof data.title === 'string');
             assert(typeof data.body === 'string');
 
-            this.id = data.id || randomInteger();
+            this.id = data.id || root.uuid.v4();
             this.title = data.title;
             this.body = data.body;
         }
