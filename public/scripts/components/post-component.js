@@ -6,7 +6,10 @@
     class PostComponent {
         constructor(post) {
             console.debug('Render component: PostComponent, id: %s', post.id);
+            this.render(post);
+        }
 
+        render(post) {
             let template = document.querySelector('#template-post').innerHTML;
             let compiledTemplate = Component.compile(template, post);
             let $target = document.querySelector('#js-list-of-posts');

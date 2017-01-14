@@ -4,17 +4,23 @@
     let runtime = root.blog.runtime;
     let constants = root.blog.constants;
     let removeHTMLTags = root.blog.utils.removeHTMLTags;
+    let Component = root.blog.views.Component;
 
     class AddPostFormComponent {
         constructor() {
             console.debug('Render component: AddPostFormComponent');
 
+            this.$template = document.querySelector('#template-post-add-form');
+
+            this.render();
+
             this.$button = document.querySelector('#js-display-form-add-post');
             this.$form = document.querySelector('#js-post-add-form');
 
-            this.$title = this.$form.querySelector('#js-post-title');
-            this.$body = this.$form.querySelector('#js-post-body');
+            this.setupListeners();
+        }
 
+        setupListeners() {
             this.$button.addEventListener('click', this.toggleDisplayForm.bind(this));
             this.$form.addEventListener('submit', this.onSubmit.bind(this));
         }
@@ -24,14 +30,13 @@
         }
 
         getFormData() {
+            let formData = new FormData(this.$form);
             let results = {};
-            let formData = new FormData(this.$form.querySelector('form'));
             formData.forEach((value, key) => {
                 value = removeHTMLTags(value);
                 key = removeHTMLTags(key);
                 results[key] = value;
             });
-
             return results;
         }
 
@@ -47,7 +52,15 @@
         }
 
         clearInputs() {
-            this.$title.value = this.$body.value = '';
+            let $title = this.$form.querySelector('#js-post-title');
+            let $body = this.$form.querySelector('#js-post-body');
+            $title.value = $body.value = '';
+        }
+
+        render() {
+            let template = this.$template.innerHTML;
+            let $target = document.querySelector('#js-list-of-posts');
+            Component.render($target, template);
         }
     }
 

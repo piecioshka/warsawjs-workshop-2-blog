@@ -29,12 +29,15 @@
                     title: formData['post-title'],
                     body: formData['post-body'],
                 };
+
+                this._clearPostContainer();
+
                 this._appendPostModel(post);
                 this._renderPostList();
                 this._savePosts();
-            });
 
-            new AddPostFormComponent();
+                runtime.router.navigate('/');
+            });
         }
 
         _savePosts() {
@@ -52,6 +55,10 @@
         onPostListHandler() {
             console.log('[+] Display list of posts');
 
+            this._clearPostContainer();
+
+            new AddPostFormComponent();
+
             this._loadPosts(() => {
                 this._renderPostList();
             });
@@ -60,6 +67,10 @@
         onPostHandler(context) {
             let postId = context.params.id;
             console.log('[+] Display post: %s', postId);
+
+            this._clearPostContainer();
+
+            new AddPostFormComponent();
 
             this._loadPosts(() => {
                 this._renderPostList(postId);
@@ -70,22 +81,24 @@
             let postId = context.params.id;
             console.log('%c[+] Remove post: %s', 'color: red', postId);
 
+            this._clearPostContainer();
+
+            new AddPostFormComponent();
+
             this.postListModel.removePostModel(postId);
             this._savePosts();
 
             runtime.router.navigate('/');
         }
 
-        _renderPostList(postId) {
-            function clearPostContainer() {
-                document.querySelector('#js-list-of-posts').innerText = '';
-            }
+        _clearPostContainer() {
+            document.querySelector('#js-list-of-posts').innerText = '';
+        }
 
+        _renderPostList(postId) {
             function renderSinglePost(postModel) {
                 new PostComponent(postModel.toJSON());
             }
-
-            clearPostContainer();
 
             if (typeof postId === 'string') {
                 let postModel = this.postListModel.getPost(postId);

@@ -26,58 +26,67 @@
         </article>
     </script>
 
+    <script id="template-post-add-form" type="text/html">
+        <form id="js-post-add-form" class="card-panel hide">
+            <h4>Dodaj post</h4>
+            <div class="input-field">
+                <i class="material-icons prefix">label_outline</i>
+                <input
+                        id="js-post-title"
+                        name="post-title"
+                        type="text"
+                        placeholder="Tytuł"
+                        required
+                />
+            </div>
+
+            <div class="input-field">
+                <i class="material-icons prefix">comment</i>
+                <textarea
+                        id="js-post-body"
+                        name="post-body"
+                        class="materialize-textarea"
+                        placeholder="Treść"
+                        required
+                ></textarea>
+            </div>
+
+            <input
+                    class="btn"
+                    type="submit"
+                    value="Dodaj nowy post">
+        </form>
+    </script>
+
+    <script id="template-comment" type="text/html">
+        <article class="card-panel" data-comment-id="{{ postId }}">
+            <p>
+                {{ body }}
+
+                <a href="#!/posts/{{ postId }}/comment/{{ commentId }}delete">
+                    <i class="right material-icons">delete</i>
+                </a>
+            </p>
+        </article>
+    </script>
+
     <script id="template-post-not-found" type="text/html">
         <article class="card-panel">
             <p>Nie znaleziono post o id: {{ id }}</p>
         </article>
     </script>
 
-    <div id="page" class="container">
-        <section class="flow-text">
-            <h3>
-                <a href="#!/" class="grey-text">Mój blog</a>
-                <a
-                        id="js-display-form-add-post"
-                        class="btn-floating btn-large waves-effect red">
-                    <i class="material-icons">add</i>
-                </a>
-            </h3>
+    <div id="page" class="container flow-text">
+        <h3>
+            <a href="#!/" class="grey-text">Mój blog</a>
+            <a
+                    id="js-display-form-add-post"
+                    class="btn-floating btn-large waves-effect red">
+                <i class="material-icons">add</i>
+            </a>
+        </h3>
 
-            <section id="js-post-add-form" class="card-panel hide">
-                <h4>Dodaj post</h4>
-
-                <form>
-                    <div class="input-field">
-                        <i class="material-icons prefix">label_outline</i>
-                        <input
-                                id="js-post-title"
-                                name="post-title"
-                                type="text"
-                                placeholder="Tytuł"
-                                required
-                        />
-                    </div>
-
-                    <div class="input-field">
-                        <i class="material-icons prefix">comment</i>
-                        <textarea
-                                id="js-post-body"
-                                name="post-body"
-                                class="materialize-textarea"
-                                placeholder="Treść"
-                                required
-                        ></textarea>
-                    </div>
-
-                    <input
-                            class="btn"
-                            type="submit"
-                            value="Dodaj nowy post">
-                </form>
-            </section>
-
-            <div id="js-list-of-posts"></div>
-        </section>
+        <div id="js-list-of-posts"></div>
     </div>
 
     <script src="https://unpkg.com/mustache"></script>
