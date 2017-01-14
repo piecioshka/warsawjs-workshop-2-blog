@@ -9,7 +9,7 @@
             assert(typeof data.title === 'string');
             assert(typeof data.body === 'string');
 
-            this.id = randomInteger();
+            this.id = data.id || randomInteger();
             this.title = data.title;
             this.body = data.body;
         }

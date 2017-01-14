@@ -14,46 +14,12 @@ Kolejność realizacji aplikacji:
 4. Komentarze: Dodawanie pojedynczego komentarza (C)
 5. Komentarze: Prezentacja wielu komentarzy (R)
 
-Dla chętnych:
+Dla szybkich:
 
 6. Posty: Edycja pojedynczego posta (U)
 7. Posty: Usuwanie pojedynczego posta (D)
 8. Komentarze: Edycja pojedynczego komentarza (U)
 9. Komentarze: Usuwanie pojedynczego komentarza (D)
-
-## Etapy tworzenia od podstaw (do wykorzystania podczas workshopu)
-
-<details>
-
-1. HTML: Stworzenie głównego pliku
-2. HTML: Stworzenie:
-    * listy postów
-    * formularza dodawania posta
-    * przycisku z dodawania posta
-3. Opcjonalne. CSS: Wykorzystanie frameworka CSS do budowy ładnego widoku
-4. HTML: Przenieść template dla jednego posta do template-u, a kontener 
-zawierający listę postów powinien być pusty.
-5. Ukryć formularz z dodawaniem posta.
-6. JS: Stworzyć plik `main.js`, w którym zdefiniować namespace.
-7. JS: Stworzyć plik `setup.js`, w którym stworzyć obiekty:
-    - modele:
-        - listy postów
-        - pojedynczego posta
-    - usługi
-        - save / read do postów
-    - widoku
-        - formularza dodawania
-    - kontroler
-        - podstawowy
-a potem wyodrębnić te obiekty (klasy) do osobnych plików.
-8. JS: Nasłuchiwać na kliknięcie przycisku dodaj post i pokazać formularz.
-9. JS: Nasłuchiwać na wysłanie formularza i zapisać obiekt posta w 
-`LocalStorage` oraz wysłać event z widoku do modelu.
-10. JS: Lista nasłuchuje na event dodania nowego posta i tworzy obiekt `Post` 
-oraz go renderuje.
-11. JS: Dopisać do usługi odczytywanie postów.
-
-</details>
 
 ## Zadania dodatkowe
 
@@ -76,6 +42,10 @@ oraz go renderuje.
 
 * http://materializecss.com/
 * https://cdnjs.com/
+* https://unpkg.com/
+
+### Wymiana kodu 
+
 * https://codeshare.io/
 * https://www.codewars.com/users/sign_in
 

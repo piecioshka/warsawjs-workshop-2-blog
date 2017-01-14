@@ -7,31 +7,40 @@
 
     class AddPostFormComponent {
         constructor() {
-            this.$button = document.querySelector('#js-display-form-add-post');
-            this.$addPostForm = document.querySelector('#js-post-add-form');
+            console.debug('new AddPostFormComponent');
 
-            this.$title = this.$addPostForm.querySelector('#js-post-title');
-            this.$body = this.$addPostForm.querySelector('#js-post-body');
+            this.$button = document.querySelector('#js-display-form-add-post');
+            this.$form = document.querySelector('#js-post-add-form');
+
+            this.$title = this.$form.querySelector('#js-post-title');
+            this.$body = this.$form.querySelector('#js-post-body');
 
             this.$button.addEventListener('click', this.toggleDisplayForm.bind(this));
-            this.$addPostForm.addEventListener('submit', this.onSubmit.bind(this));
+            this.$form.addEventListener('submit', this.onSubmit.bind(this));
         }
 
         toggleDisplayForm() {
-            this.$addPostForm.classList.toggle('hide');
+            this.$form.classList.toggle('hide');
         }
 
         getFormData() {
-            let title = removeHTMLTags(this.$title.value);
-            let body = removeHTMLTags(this.$body.value);
+            let results = {};
+            let formData = new FormData(this.$form.querySelector('form'));
+            formData.forEach((value, key) => {
+                value = removeHTMLTags(value);
+                key = removeHTMLTags(key);
+                results[key] = value;
+            });
 
-            return { title, body };
+            return results;
         }
 
         onSubmit(evt) {
             evt.preventDefault();
 
-            runtime.emit(constants.post.NEW_POST, this.getFormData());
+            let formData = this.getFormData();
+
+            runtime.emit(constants.post.NEW_POST, formData);
 
             this.toggleDisplayForm();
             this.clearInputs();
@@ -42,5 +51,5 @@
         }
     }
 
-    root.blog.views.AddPostForm = AddPostFormComponent;
+    root.blog.views.AddPostFormComponent = AddPostFormComponent;
 }(window));

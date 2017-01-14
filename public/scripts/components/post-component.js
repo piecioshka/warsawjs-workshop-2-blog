@@ -1,24 +1,18 @@
 (function (root) {
     'use strict';
 
+    let Component = root.blog.views.Component;
+
     class PostComponent {
-        constructor() {
-            this.$template = document.querySelector('#template-post').innerHTML;
-            this.$dest = document.querySelector('#js-list-of-posts');
-        }
+        constructor(post) {
+            console.debug('new PostComponent');
 
-        compile(post) {
-            return root.Mustache.render(this.$template, post);
-        }
-
-        render(post) {
-            let compiled = this.compile(post);
-            let $fake = document.createElement('fake');
-            $fake.innerHTML = compiled;
-            let $article = $fake.firstElementChild;
-            this.$dest.insertBefore($article, this.$dest.firstElementChild);
+            let template = document.querySelector('#template-post').innerHTML;
+            let compiledTemplate = Component.compile(template, post);
+            let $target = document.querySelector('#js-list-of-posts');
+            Component.render($target, compiledTemplate);
         }
     }
 
-    root.blog.views.Post = PostComponent;
+    root.blog.views.PostComponent = PostComponent;
 }(window));

@@ -11,7 +11,7 @@
 </head>
 <body>
     <script id="template-post" type="text/html">
-        <article class="card-panel">
+        <article class="card-panel" data-post-id="{{ id }}">
             <h5>
                 <a href="#!/posts/{{ id }}">
                     {{ title }}
@@ -26,10 +26,16 @@
         </article>
     </script>
 
+    <script id="template-post-not-found" type="text/html">
+        <article class="card-panel">
+            <p>Nie znaleziono post o id: {{ id }}</p>
+        </article>
+    </script>
+
     <div id="page" class="container">
         <section class="flow-text">
             <h3>
-                <a href="./" class="grey-text">Mój blog</a>
+                <a href="#!/" class="grey-text">Mój blog</a>
                 <a
                         id="js-display-form-add-post"
                         class="btn-floating btn-large waves-effect red">
@@ -38,13 +44,14 @@
             </h3>
 
             <section id="js-post-add-form" class="card-panel hide">
-                <h1>Dodaj post</h1>
+                <h4>Dodaj post</h4>
 
                 <form>
                     <div class="input-field">
                         <i class="material-icons prefix">label_outline</i>
                         <input
                                 id="js-post-title"
+                                name="post-title"
                                 type="text"
                                 placeholder="Tytuł"
                                 required
@@ -55,6 +62,7 @@
                         <i class="material-icons prefix">comment</i>
                         <textarea
                                 id="js-post-body"
+                                name="post-body"
                                 class="materialize-textarea"
                                 placeholder="Treść"
                                 required
@@ -62,7 +70,7 @@
                     </div>
 
                     <input
-                            class="btn waves-effect waves-light"
+                            class="btn"
                             type="submit"
                             value="Dodaj nowy post">
                 </form>
@@ -72,8 +80,9 @@
         </section>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js"></script>
+    <script src="https://unpkg.com/mustache"></script>
+    <script src="https://unpkg.com/super-event-emitter"></script>
+    <script src="https://unpkg.com/grapnel"></script>
 
     <script src="scripts/main.js"></script>
     <script src="scripts/utils.js"></script>
@@ -86,8 +95,10 @@
     <script src="scripts/models/post-model.js"></script>
     <script src="scripts/models/post-list-model.js"></script>
 
+    <script src="scripts/components/component.js"></script>
     <script src="scripts/components/post-component.js"></script>
     <script src="scripts/components/post-add-form-component.js"></script>
+    <script src="scripts/components/post-not-found-component.js"></script>
 
     <script src="scripts/controllers/app-controller.js"></script>
     <script src="scripts/setup.js"></script>
