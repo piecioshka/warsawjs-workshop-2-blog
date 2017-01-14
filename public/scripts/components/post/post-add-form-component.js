@@ -14,8 +14,8 @@
 
             this.render();
 
-            this.$button = document.querySelector('#js-display-form-add-post');
-            this.$form = document.querySelector('#js-post-add-form');
+            this.$button = document.querySelector('#display-form-add-post');
+            this.$form = document.querySelector('#post-add-form');
 
             this.setupListeners();
         }
@@ -52,14 +52,14 @@
         }
 
         clearInputs() {
-            let $title = this.$form.querySelector('#js-post-title');
-            let $body = this.$form.querySelector('#js-post-body');
+            let $title = this.$form.querySelector('#post-title');
+            let $body = this.$form.querySelector('#post-body');
             $title.value = $body.value = '';
         }
 
         render() {
             let template = this.$template.innerHTML;
-            let $target = document.querySelector('#js-list-of-components');
+            let $target = document.querySelector('#list-of-components');
             Component.render($target, template);
         }
     }

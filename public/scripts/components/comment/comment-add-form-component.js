@@ -15,7 +15,7 @@
 
             this.render();
 
-            this.$form = document.querySelector('#js-comment-add-form');
+            this.$form = document.querySelector('#comment-add-form');
 
             this.setupListeners();
         }
@@ -47,13 +47,13 @@
         }
 
         clearInputs() {
-            let $body = this.$form.querySelector('#js-comment-body');
+            let $body = this.$form.querySelector('#comment-body');
             $body.value = '';
         }
 
         render() {
             let template = this.$template.innerHTML;
-            let $target = document.querySelector('#js-list-of-components');
+            let $target = document.querySelector('#list-of-components');
             Component.render($target, template);
         }
     }

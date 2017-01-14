@@ -12,7 +12,7 @@
 <body>
     <div data-comment="Only for templates">
         <script id="template-post" type="text/html">
-            <article class="card-panel" data-post-id="{{ id }}">
+            <article class="card-panel row" data-post-id="{{ id }}">
                 <h5>
                     <a href="#!/posts/{{ id }}">
                         {{ title }}
@@ -28,18 +28,18 @@
         </script>
 
         <script id="template-post-not-found" type="text/html">
-            <article class="card-panel">
+            <article class="card-panel row">
                 <p>Nie znaleziono post o id: {{ id }}</p>
             </article>
         </script>
 
         <script id="template-post-add-form" type="text/html">
-            <form id="js-post-add-form" class="card-panel red lighten-3 hide">
+            <form id="post-add-form" class="card-panel row red lighten-3 hide">
                 <h4>Dodaj post</h4>
                 <div class="input-field">
                     <i class="material-icons prefix">label_outline</i>
                     <input
-                            id="js-post-title"
+                            id="post-title"
                             name="post-title"
                             type="text"
                             placeholder="Tytuł"
@@ -50,7 +50,7 @@
                 <div class="input-field">
                     <i class="material-icons prefix">comment</i>
                     <textarea
-                            id="js-post-body"
+                            id="post-body"
                             name="post-body"
                             class="materialize-textarea"
                             placeholder="Treść"
@@ -88,13 +88,13 @@
         </script>
 
         <script id="template-comment-add-form" type="text/html">
-            <form id="js-comment-add-form" class="card-panel teal">
+            <form id="comment-add-form" class="card-panel row teal">
                 <h4>Dodaj komentarz</h4>
 
                 <div class="input-field">
                     <i class="material-icons prefix">comment</i>
                     <textarea
-                            id="js-comment-body"
+                            id="comment-body"
                             name="comment-body"
                             class="materialize-textarea"
                             placeholder="Treść"
@@ -114,13 +114,13 @@
         <h3>
             <a href="#!/" class="grey-text">Mój blog</a>
             <a
-                    id="js-display-form-add-post"
+                    id="display-form-add-post"
                     class="btn-floating btn-large waves-effect red">
                 <i class="material-icons">add</i>
             </a>
         </h3>
 
-        <div id="js-list-of-components"></div>
+        <div id="list-of-components"></div>
     </div>
 
     <div data-comment="Only for scripts imports">

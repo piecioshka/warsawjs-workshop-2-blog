@@ -147,7 +147,7 @@
         }
 
         _clearPostContainer() {
-            document.querySelector('#js-list-of-components').innerText = '';
+            document.querySelector('#list-of-components').innerText = '';
         }
 
         _renderPostProfile(postId) {

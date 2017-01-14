@@ -12,7 +12,7 @@
         render(comment) {
             let template = document.querySelector('#template-comment').innerHTML;
             let compiledTemplate = Component.compile(template, comment);
-            let $target = document.querySelector('#js-list-of-components');
+            let $target = document.querySelector('#list-of-components');
             Component.render($target, compiledTemplate);
         }
     }
