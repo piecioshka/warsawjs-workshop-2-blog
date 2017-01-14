@@ -47,7 +47,6 @@
             });
 
             runtime.on(constants.comment.NEW_COMMENT, (formData) => {
-                console.log(formData);
                 let comment = {
                     body: formData['comment-body'],
                     postId: formData['post-id'],
@@ -98,23 +97,16 @@
             });
         }
 
-        _renderPostProfile(postId) {
-            assert(typeof postId === 'string');
-
-            let postModel = this.postListModel.getEntry(postId);
-
-            if (postModel) {
-                this._renderPost(postModel);
-                new AddCommentFormComponent(postModel);
-                this._renderCommentList(postId);
-            } else {
-                new PostNotFoundComponent(postId);
-            }
-        }
-
-        onPostRemoveHandler(context) {
+        onPostRemoveHandler(context, callstack) {
             let postId = context.params.id;
             console.log('%c[+] Remove post: %s', 'color: red', postId);
+
+            let msg = `Czy na pewno chcesz usunąć post: ${postId}?`;
+
+            if (!confirm(msg)) {
+                runtime.router.navigate(callstack.previousState.value);
+                return;
+            }
 
             this._clearPostContainer();
 
@@ -128,9 +120,16 @@
             runtime.router.navigate('/');
         }
 
-        onCommentRemoveHandler(context) {
+        onCommentRemoveHandler(context, callstack) {
             let commentId = context.params.commentId;
             let postId = context.params.postId;
+
+            let msg = `Czy na pewno chcesz usunąć komentarz: ${commentId}?`;
+
+            if (!confirm(msg)) {
+                runtime.router.navigate(callstack.previousState.value);
+                return;
+            }
 
             assert(typeof commentId === 'string');
             assert(typeof postId === 'string');
@@ -145,6 +144,20 @@
 
         _clearPostContainer() {
             document.querySelector('#js-list-of-components').innerText = '';
+        }
+
+        _renderPostProfile(postId) {
+            assert(typeof postId === 'string');
+
+            let postModel = this.postListModel.getEntry(postId);
+
+            if (postModel) {
+                this._renderPost(postModel);
+                new AddCommentFormComponent(postModel);
+                this._renderCommentList(postId);
+            } else {
+                new PostNotFoundComponent(postId);
+            }
         }
 
         _appendPostModel(post) {

@@ -13,16 +13,19 @@ Kolejność realizacji aplikacji:
 3. Posty: Prezentacja pojedynczego posta (R)
 4. Komentarze: Dodawanie pojedynczego komentarza (C)
 5. Komentarze: Prezentacja wielu komentarzy (R)
+6. Posty: Usuwanie pojedynczego posta (D)
+7. Komentarze: Usuwanie pojedynczego komentarza (D)
+8. All: Potwierdzenie usuwania posta i komentarza
 
 Dla szybkich:
 
-6. Posty: Edycja pojedynczego posta (U)
-7. Posty: Usuwanie pojedynczego posta (D)
-8. Komentarze: Edycja pojedynczego komentarza (U)
-9. Komentarze: Usuwanie pojedynczego komentarza (D)
+9. Posty: Edycja pojedynczego posta (U)
+10. Komentarze: Edycja pojedynczego komentarza (U)
 
 ## Zadania dodatkowe
 
+* Wykorzystanie transpilera, np. Babel
+* Wykorzystanie bundlera, np. Webpack
 * Uprawnienia:
     * czytelnik:
         * nie dodaje artykułów
@@ -32,8 +35,6 @@ Dla szybkich:
         * dodaje artykuły
         * dodaje komentarze
         * edytuje wszystkie komentarze
-* Wykorzystanie transpilera, np. babel
-* Wykorzystanie bundlera, np. webpack
 * Wykorzystanie captcha przy dodawaniu komentarzy
 * Wpisywanie wyrazów komendami głosowymi (speech recognition)
 * Filtry na brzydkie wyrazy
