@@ -10,71 +10,95 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <script id="template-post" type="text/html">
-        <article class="card-panel" data-post-id="{{ id }}">
-            <h5>
-                <a href="#!/posts/{{ id }}">
-                    {{ title }}
-                </a>
+    <div data-comment="Only for templates">
+        <script id="template-post" type="text/html">
+            <article class="card-panel" data-post-id="{{ id }}">
+                <h5>
+                    <a href="#!/posts/{{ id }}">
+                        {{ title }}
+                    </a>
 
-                <a href="#!/posts/{{ id }}/delete">
-                    <i class="right material-icons">delete</i>
-                </a>
-            </h5>
+                    <a href="#!/posts/{{ id }}/delete">
+                        <i class="right material-icons">delete</i>
+                    </a>
+                </h5>
 
-            <p>{{ body }}</p>
-        </article>
-    </script>
+                <p>{{ body }}</p>
+            </article>
+        </script>
 
-    <script id="template-post-add-form" type="text/html">
-        <form id="js-post-add-form" class="card-panel hide">
-            <h4>Dodaj post</h4>
-            <div class="input-field">
-                <i class="material-icons prefix">label_outline</i>
+        <script id="template-post-not-found" type="text/html">
+            <article class="card-panel">
+                <p>Nie znaleziono post o id: {{ id }}</p>
+            </article>
+        </script>
+
+        <script id="template-post-add-form" type="text/html">
+            <form id="js-post-add-form" class="card-panel red lighten-3 hide">
+                <h4>Dodaj post</h4>
+                <div class="input-field">
+                    <i class="material-icons prefix">label_outline</i>
+                    <input
+                            id="js-post-title"
+                            name="post-title"
+                            type="text"
+                            placeholder="Tytuł"
+                            required
+                    />
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">comment</i>
+                    <textarea
+                            id="js-post-body"
+                            name="post-body"
+                            class="materialize-textarea"
+                            placeholder="Treść"
+                            required
+                    ></textarea>
+                </div>
+
                 <input
-                        id="js-post-title"
-                        name="post-title"
-                        type="text"
-                        placeholder="Tytuł"
-                        required
-                />
-            </div>
+                        class="btn red"
+                        type="submit"
+                        value="Dodaj nowy post">
+            </form>
+        </script>
 
-            <div class="input-field">
-                <i class="material-icons prefix">comment</i>
-                <textarea
-                        id="js-post-body"
-                        name="post-body"
-                        class="materialize-textarea"
-                        placeholder="Treść"
-                        required
-                ></textarea>
-            </div>
+        <script id="template-comment" type="text/html">
+            <article class="card-panel" data-comment-id="{{ id }}">
+                <p>
+                    {{ body }}
 
-            <input
-                    class="btn"
-                    type="submit"
-                    value="Dodaj nowy post">
-        </form>
-    </script>
+                    <a href="#!/posts/{{ postId }}/comment/{{ id }}/delete">
+                        <i class="right material-icons">delete</i>
+                    </a>
+                </p>
+            </article>
+        </script>
 
-    <script id="template-comment" type="text/html">
-        <article class="card-panel" data-comment-id="{{ postId }}">
-            <p>
-                {{ body }}
+        <script id="template-comment-add-form" type="text/html">
+            <form id="js-comment-add-form" class="card-panel teal">
+                <h4>Dodaj komentarz</h4>
 
-                <a href="#!/posts/{{ postId }}/comment/{{ commentId }}delete">
-                    <i class="right material-icons">delete</i>
-                </a>
-            </p>
-        </article>
-    </script>
+                <div class="input-field">
+                    <i class="material-icons prefix">comment</i>
+                    <textarea
+                            id="js-comment-body"
+                            name="comment-body"
+                            class="materialize-textarea"
+                            placeholder="Treść"
+                            required
+                    ></textarea>
+                </div>
 
-    <script id="template-post-not-found" type="text/html">
-        <article class="card-panel">
-            <p>Nie znaleziono post o id: {{ id }}</p>
-        </article>
-    </script>
+                <input
+                        class="btn"
+                        type="submit"
+                        value="Dodaj nowy komentarz">
+            </form>
+        </script>
+    </div>
 
     <div id="page" class="container flow-text">
         <h3>
@@ -86,31 +110,43 @@
             </a>
         </h3>
 
-        <div id="js-list-of-posts"></div>
+        <div id="js-list-of-components"></div>
     </div>
 
-    <script src="https://unpkg.com/mustache"></script>
-    <script src="https://unpkg.com/super-event-emitter"></script>
-    <script src="https://unpkg.com/grapnel"></script>
-    <script src="https://wzrd.in/standalone/uuid@latest"></script>
+    <div data-comment="Only for scripts imports">
+        <script src="https://unpkg.com/mustache"></script>
+        <script src="https://unpkg.com/super-event-emitter"></script>
+        <script src="https://unpkg.com/grapnel"></script>
+        <script src="https://wzrd.in/standalone/uuid@latest"></script>
 
-    <script src="scripts/main.js"></script>
-    <script src="scripts/utils.js"></script>
-    <script src="scripts/constants/post.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/constants/comment-constant.js"></script>
+        <script src="scripts/constants/post-constant.js"></script>
 
-    <script src="scripts/services/local-storage-adapter.js"></script>
-    <script src="scripts/services/rest-adapter.js"></script>
-    <script src="scripts/services/storage-service.js"></script>
+        <script src="scripts/services/local-storage-adapter.js"></script>
+        <script src="scripts/services/rest-adapter.js"></script>
+        <script src="scripts/services/storage-service.js"></script>
 
-    <script src="scripts/models/post-model.js"></script>
-    <script src="scripts/models/post-list-model.js"></script>
+        <script src="scripts/models/entry-list/entry-list-model.js"></script>
+        <script src="scripts/models/entry-list/comments-list-model.js"></script>
+        <script src="scripts/models/entry-list/post-list-model.js"></script>
 
-    <script src="scripts/components/component.js"></script>
-    <script src="scripts/components/post-component.js"></script>
-    <script src="scripts/components/post-add-form-component.js"></script>
-    <script src="scripts/components/post-not-found-component.js"></script>
+        <script src="scripts/models/entry/entry-model.js"></script>
+        <script src="scripts/models/entry/comment-model.js"></script>
+        <script src="scripts/models/entry/post-model.js"></script>
 
-    <script src="scripts/controllers/post-controller.js"></script>
-    <script src="scripts/setup.js"></script>
+        <script src="scripts/components/component.js"></script>
+
+        <script src="scripts/components/comment/comment-component.js"></script>
+        <script src="scripts/components/comment/comment-add-form-component.js"></script>
+
+        <script src="scripts/components/post/post-component.js"></script>
+        <script src="scripts/components/post/post-add-form-component.js"></script>
+        <script src="scripts/components/post/post-not-found-component.js"></script>
+
+        <script src="scripts/controllers/post-controller.js"></script>
+        <script src="scripts/setup.js"></script>
+    </div>
 </body>
 </html>

@@ -3,6 +3,7 @@
 
     let runtime = root.blog.runtime;
     let constants = root.blog.constants;
+    let assert = root.blog.utils.assert;
 
     let StorageService = root.blog.services.StorageService;
     let LocalStorageAdapter = root.blog.adapters.LocalStorageAdapter;
@@ -12,8 +13,14 @@
     let PostComponent = root.blog.views.PostComponent;
     let PostNotFoundComponent = root.blog.views.PostNotFoundComponent;
 
-    let PostModel = root.blog.models.Post;
-    let PostListModel = root.blog.models.PostList;
+    let AddCommentFormComponent = root.blog.views.AddCommentFormComponent;
+    let CommentComponent = root.blog.views.CommentComponent;
+
+    let PostModel = root.blog.models.PostModel;
+    let PostListModel = root.blog.models.PostListModel;
+
+    let CommentModel = root.blog.models.CommentModel;
+    let CommentListModel = root.blog.models.CommentListModel;
 
     const STORAGE_KEY = 'posts';
 
@@ -37,6 +44,20 @@
                 this._savePosts();
 
                 runtime.router.navigate('/');
+            });
+
+            runtime.on(constants.comment.NEW_COMMENT, (formData) => {
+                console.log(formData);
+                let comment = {
+                    body: formData['comment-body'],
+                    postId: formData['post-id'],
+                };
+
+                this._clearPostContainer();
+
+                this._appendCommentModel(comment, comment.postId);
+                this._renderPostProfile(comment.postId);
+                this._savePosts();
             });
         }
 
@@ -73,8 +94,22 @@
             new AddPostFormComponent();
 
             this._loadPosts(() => {
-                this._renderPostList(postId);
+                this._renderPostProfile(postId);
             });
+        }
+
+        _renderPostProfile(postId) {
+            assert(typeof postId === 'string');
+
+            let postModel = this.postListModel.getEntry(postId);
+
+            if (postModel) {
+                this._renderPost(postModel);
+                new AddCommentFormComponent(postModel);
+                this._renderCommentList(postId);
+            } else {
+                new PostNotFoundComponent(postId);
+            }
         }
 
         onPostRemoveHandler(context) {
@@ -85,38 +120,59 @@
 
             new AddPostFormComponent();
 
-            this.postListModel.removePostModel(postId);
+            this.postListModel.removeEntry(postId);
             this._savePosts();
+
+            this._renderPostProfile(postId);
 
             runtime.router.navigate('/');
         }
 
-        _clearPostContainer() {
-            document.querySelector('#js-list-of-posts').innerText = '';
+        onCommentRemoveHandler(context) {
+            let commentId = context.params.commentId;
+            let postId = context.params.postId;
+
+            assert(typeof commentId === 'string');
+            assert(typeof postId === 'string');
+
+            console.log('%c[+] Remove comment: %s in post %s', 'color: red', commentId, postId);
+
+            this.postListModel.getEntry(postId).comments.removeEntry(commentId);
+            this._savePosts();
+
+            runtime.router.navigate(`/posts/${postId}`);
         }
 
-        _renderPostList(postId) {
-            function renderSinglePost(postModel) {
-                new PostComponent(postModel.toJSON());
-            }
-
-            if (typeof postId === 'string') {
-                let postModel = this.postListModel.getPost(postId);
-
-                if (postModel) {
-                    renderSinglePost(postModel);
-                } else {
-                    new PostNotFoundComponent(postId);
-                }
-            } else {
-                console.group('Render list of posts');
-                this.postListModel.each(renderSinglePost);
-                console.groupEnd('Render posts');
-            }
+        _clearPostContainer() {
+            document.querySelector('#js-list-of-components').innerText = '';
         }
 
         _appendPostModel(post) {
-            this.postListModel.addPostModel(new PostModel(post));
+            this.postListModel.addEntry(new PostModel(post));
+        }
+
+        _renderPostList() {
+            console.group('Render list of posts');
+            this.postListModel.each(this._renderPost);
+            console.groupEnd('Render list of posts');
+        }
+
+        _renderPost(postModel) {
+            new PostComponent(postModel.toJSON());
+        }
+
+        _appendCommentModel(comment, postId) {
+            this.postListModel.getEntry(postId).comments.addEntry(new CommentModel(comment));
+        }
+
+        _renderCommentList(postId) {
+            console.group('Render list of comments');
+            this.postListModel.getEntry(postId).comments.each(this._renderComment);
+            console.groupEnd('Render list of comments');
+        }
+
+        _renderComment(commentModel) {
+            new CommentComponent(commentModel.toJSON());
         }
     }
 

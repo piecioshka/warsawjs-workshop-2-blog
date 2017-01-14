@@ -6,27 +6,22 @@
     let removeHTMLTags = root.blog.utils.removeHTMLTags;
     let Component = root.blog.views.Component;
 
-    class AddPostFormComponent {
-        constructor() {
-            console.debug('Render component: AddPostFormComponent');
+    class AddCommentFormComponent {
+        constructor(post) {
+            console.debug('Render component: AddCommentFormComponent');
 
-            this.$template = document.querySelector('#template-post-add-form');
+            this.post = post;
+            this.$template = document.querySelector('#template-comment-add-form');
 
             this.render();
 
-            this.$button = document.querySelector('#js-display-form-add-post');
-            this.$form = document.querySelector('#js-post-add-form');
+            this.$form = document.querySelector('#js-comment-add-form');
 
             this.setupListeners();
         }
 
         setupListeners() {
-            this.$button.addEventListener('click', this.toggleDisplayForm.bind(this));
             this.$form.addEventListener('submit', this.onSubmit.bind(this));
-        }
-
-        toggleDisplayForm() {
-            this.$form.classList.toggle('hide');
         }
 
         getFormData() {
@@ -37,6 +32,7 @@
                 key = removeHTMLTags(key);
                 results[key] = value;
             });
+            results['post-id'] = this.post.id;
             return results;
         }
 
@@ -45,24 +41,22 @@
 
             let formData = this.getFormData();
 
-            runtime.emit(constants.post.NEW_POST, formData);
+            runtime.emit(constants.comment.NEW_COMMENT, formData);
 
-            this.toggleDisplayForm();
             this.clearInputs();
         }
 
         clearInputs() {
-            let $title = this.$form.querySelector('#js-post-title');
-            let $body = this.$form.querySelector('#js-post-body');
-            $title.value = $body.value = '';
+            let $body = this.$form.querySelector('#js-comment-body');
+            $body.value = '';
         }
 
         render() {
             let template = this.$template.innerHTML;
-            let $target = document.querySelector('#js-list-of-posts');
+            let $target = document.querySelector('#js-list-of-components');
             Component.render($target, template);
         }
     }
 
-    root.blog.views.AddPostFormComponent = AddPostFormComponent;
+    root.blog.views.AddCommentFormComponent = AddCommentFormComponent;
 }(window));
