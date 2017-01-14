@@ -16,6 +16,10 @@
                 <a href="#!/posts/{{ id }}">
                     {{ title }}
                 </a>
+
+                <a href="#!/posts/{{ id }}/delete">
+                    <i class="right material-icons">delete</i>
+                </a>
             </h5>
 
             <p>{{ body }}</p>
@@ -74,11 +78,17 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/utils.js"></script>
     <script src="scripts/constants/post.js"></script>
-    <script src="scripts/services/posts.js"></script>
-    <script src="scripts/models/post.js"></script>
-    <script src="scripts/models/post-list.js"></script>
-    <script src="scripts/views/post.js"></script>
-    <script src="scripts/views/post-add-form.js"></script>
+
+    <script src="scripts/services/local-storage-adapter.js"></script>
+    <script src="scripts/services/rest-adapter.js"></script>
+    <script src="scripts/services/storage-service.js"></script>
+
+    <script src="scripts/models/post-model.js"></script>
+    <script src="scripts/models/post-list-model.js"></script>
+
+    <script src="scripts/components/post-component.js"></script>
+    <script src="scripts/components/post-add-form-component.js"></script>
+
     <script src="scripts/controllers/app-controller.js"></script>
     <script src="scripts/setup.js"></script>
 </body>

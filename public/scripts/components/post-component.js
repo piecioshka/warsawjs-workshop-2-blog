@@ -1,7 +1,7 @@
 (function (root) {
     'use strict';
 
-    class PostView {
+    class PostComponent {
         constructor() {
             this.$template = document.querySelector('#template-post').innerHTML;
             this.$dest = document.querySelector('#js-list-of-posts');
@@ -20,5 +20,5 @@
         }
     }
 
-    root.blog.views.Post = PostView;
+    root.blog.views.Post = PostComponent;
 }(window));

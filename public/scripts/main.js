@@ -2,11 +2,12 @@
     'use strict';
 
     root.blog = {
-        constants: {},
         runtime: new EventEmitter(),
+        constants: {},
         controllers: {},
         models: {},
         services: {},
+        adapters: {},
         views: {},
         utils: {}
     };

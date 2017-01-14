@@ -5,7 +5,7 @@
     let constants = root.blog.constants;
     let removeHTMLTags = root.blog.utils.removeHTMLTags;
 
-    class AddPostFormView {
+    class AddPostFormComponent {
         constructor() {
             this.$button = document.querySelector('#js-display-form-add-post');
             this.$addPostForm = document.querySelector('#js-post-add-form');
@@ -42,5 +42,5 @@
         }
     }
 
-    root.blog.views.AddPostForm = AddPostFormView;
+    root.blog.views.AddPostForm = AddPostFormComponent;
 }(window));
