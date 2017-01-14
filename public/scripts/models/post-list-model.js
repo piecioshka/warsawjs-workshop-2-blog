@@ -13,8 +13,6 @@
         }
 
         removePostModel(postId) {
-            assert(typeof postId === 'number');
-
             let postIndex = this.posts.findIndex((postModel) => {
                 return postModel.id === postId;
             });

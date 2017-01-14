@@ -17,7 +17,7 @@
 
     const STORAGE_KEY = 'posts';
 
-    class AppController {
+    class PostController {
         constructor() {
             runtime.PostsService = new StorageService(STORAGE_KEY);
             runtime.PostsService.setAdapter(LocalStorageAdapter);
@@ -58,7 +58,7 @@
         }
 
         onPostHandler(context) {
-            let postId = Number(context.params.id);
+            let postId = context.params.id;
             console.log('[+] Display post: %s', postId);
 
             this._loadPosts(() => {
@@ -67,7 +67,7 @@
         }
 
         onPostRemoveHandler(context) {
-            let postId = Number(context.params.id);
+            let postId = context.params.id;
             console.log('%c[+] Remove post: %s', 'color: red', postId);
 
             this.postListModel.removePostModel(postId);
@@ -87,7 +87,7 @@
 
             clearPostContainer();
 
-            if (typeof postId === 'number') {
+            if (typeof postId === 'string') {
                 let postModel = this.postListModel.getPost(postId);
 
                 if (postModel) {
@@ -107,5 +107,5 @@
         }
     }
 
-    root.blog.controllers.AppController = AppController;
+    root.blog.controllers.PostController = PostController;
 }(window));

@@ -2,10 +2,10 @@
     'use strict';
 
     let runtime = root.blog.runtime;
-    let AppController = root.blog.controllers.AppController;
+    let PostController = root.blog.controllers.PostController;
 
     function setup() {
-        let controller = new AppController();
+        let controller = new PostController();
         let router = runtime.router = new Grapnel({ hashBang: true });
 
         router.get('/', controller.onPostListHandler.bind(controller));
