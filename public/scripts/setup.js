@@ -12,5 +12,5 @@
         window.app = controller;
     }
 
-    setup();
+    window.addEventListener('DOMContentLoaded', setup);
 }(window));
