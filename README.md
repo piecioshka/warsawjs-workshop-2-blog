@@ -39,6 +39,8 @@ Dla szybkich:
 * Wykorzystanie captcha przy dodawaniu komentarzy
 * Wpisywanie wyrazów komendami głosowymi (speech recognition)
 * Filtry na brzydkie wyrazy
+* Licznik komentarzy
+* Zabezpieczenie przed wpisaniem jednego długiego string-a
 
 ## Przydatne linki
 
