@@ -1,22 +1,14 @@
 (function (root) {
     'use strict';
 
-    let runtime = root.blog.runtime;
     let PostController = root.blog.controllers.PostController;
+    let router = root.blog.runtime.router;
 
     function setup() {
         let controller = new PostController();
-        let router = runtime.router = new Grapnel({ hashBang: true });
+        router.setup(controller);
 
-        router.get('/', controller.onPostListHandler.bind(controller));
-        router.get('/posts/:id', controller.onPostHandler.bind(controller));
-        router.get('/posts/:id/delete', controller.onPostRemoveHandler.bind(controller));
-        router.get('/posts/:postId/comment/:commentId/delete', controller.onCommentRemoveHandler.bind(controller));
-
-        if (!router.path()) {
-            router.navigate('/');
-        }
-
+        // Only for development process.
         window.app = controller;
     }
 
