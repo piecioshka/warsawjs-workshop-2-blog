@@ -17,11 +17,13 @@ Kolejność realizacji aplikacji:
 7. Komentarze: Usuwanie pojedynczego komentarza (D)
 8. All: Potwierdzenie usuwania posta i komentarza
 9. Komentarze: Prezentacja fikcyjnych awatarów
+10. Komentarze: Licznik komentarzy
+11. All: Zabezpieczenie przed wpisaniem jednego długiego string-a
 
 Dla szybkich:
 
-10. Posty: Edycja pojedynczego posta (U)
-11. Komentarze: Edycja pojedynczego komentarza (U)
+12. Posty: Edycja pojedynczego posta (U)
+13. Komentarze: Edycja pojedynczego komentarza (U)
 
 ## Zadania dodatkowe
 
@@ -39,8 +41,6 @@ Dla szybkich:
 * Wykorzystanie captcha przy dodawaniu komentarzy
 * Wpisywanie wyrazów komendami głosowymi (speech recognition)
 * Filtry na brzydkie wyrazy
-* Licznik komentarzy
-* Zabezpieczenie przed wpisaniem jednego długiego string-a
 
 ## Przydatne linki
 
