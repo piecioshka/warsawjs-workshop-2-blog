@@ -21,15 +21,15 @@
         }
 
         setupListeners() {
-            this.$button.addEventListener('click', this.toggleDisplayForm.bind(this));
+            this.$button.addEventListener('click', this._toggleDisplayForm.bind(this));
             this.$form.addEventListener('submit', this.onSubmit.bind(this));
         }
 
-        toggleDisplayForm() {
+        _toggleDisplayForm() {
             this.$form.classList.toggle('hide');
         }
 
-        getFormData() {
+        _getFormData() {
             let formData = new FormData(this.$form);
             let results = {};
             formData.forEach((value, key) => {
@@ -43,18 +43,15 @@
         onSubmit(evt) {
             evt.preventDefault();
 
-            let formData = this.getFormData();
-
+            let formData = this._getFormData();
             runtime.emit(constants.post.NEW_POST, formData);
 
-            this.toggleDisplayForm();
-            this.clearInputs();
+            this._clearInputs();
+            this._toggleDisplayForm();
         }
 
-        clearInputs() {
-            let $title = this.$form.querySelector('#post-title');
-            let $body = this.$form.querySelector('#post-body');
-            $title.value = $body.value = '';
+        _clearInputs() {
+            this.$form.reset();
         }
 
         render() {

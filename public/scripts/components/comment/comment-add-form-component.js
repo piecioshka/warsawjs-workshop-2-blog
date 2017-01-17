@@ -24,7 +24,7 @@
             this.$form.addEventListener('submit', this.onSubmit.bind(this));
         }
 
-        getFormData() {
+        _getFormData() {
             let formData = new FormData(this.$form);
             let results = {};
             formData.forEach((value, key) => {
@@ -39,16 +39,14 @@
         onSubmit(evt) {
             evt.preventDefault();
 
-            let formData = this.getFormData();
-
+            let formData = this._getFormData();
             runtime.emit(constants.comment.NEW_COMMENT, formData);
 
-            this.clearInputs();
+            this._clearInputs();
         }
 
-        clearInputs() {
-            let $body = this.$form.querySelector('#comment-body');
-            $body.value = '';
+        _clearInputs() {
+            this.$form.reset();
         }
 
         render() {
