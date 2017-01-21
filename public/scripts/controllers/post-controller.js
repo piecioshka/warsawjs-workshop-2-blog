@@ -138,7 +138,11 @@
             assert(typeof commentId === 'string');
             assert(typeof postId === 'string');
 
-            console.log('%c[+] Remove comment: %s in post %s', 'color: red', commentId, postId);
+            console.log(
+                '%c[+] Remove comment: %s in post %s',
+                'color: red',
+                commentId, postId
+            );
 
             this.postListModel.getEntry(postId).comments.removeEntry(commentId);
             this._savePosts();
@@ -156,7 +160,7 @@
             let postModel = this.postListModel.getEntry(postId);
 
             if (postModel) {
-                this._renderPost(postModel);
+                PostController._renderPost(postModel);
                 new AddCommentFormComponent(postModel);
                 this._renderCommentList(postId);
             } else {
@@ -170,26 +174,30 @@
 
         _renderPostList() {
             console.group('Render list of posts');
-            this.postListModel.each(this._renderPost);
+            this.postListModel.each(PostController._renderPost);
             console.groupEnd('Render list of posts');
         }
 
-        _renderPost(postModel) {
-            new PostComponent(postModel.toJSON());
+        static _renderPost(postModel) {
+            new PostComponent(postModel);
         }
 
         _appendCommentModel(comment, postId) {
-            this.postListModel.getEntry(postId).comments.addEntry(new CommentModel(comment));
+            this.postListModel.getEntry(postId).comments.addEntry(
+                new CommentModel(comment)
+            );
         }
 
         _renderCommentList(postId) {
             console.group('Render list of comments');
-            this.postListModel.getEntry(postId).comments.each(this._renderComment);
+            this.postListModel.getEntry(postId).comments.each(
+                PostController._renderComment
+            );
             console.groupEnd('Render list of comments');
         }
 
-        _renderComment(commentModel) {
-            new CommentComponent(commentModel.toJSON());
+        static _renderComment(commentModel) {
+            new CommentComponent(commentModel);
         }
     }
 

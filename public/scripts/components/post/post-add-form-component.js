@@ -21,7 +21,10 @@
         }
 
         setupListeners() {
-            this.$button.addEventListener('click', this._toggleDisplayForm.bind(this));
+            this.$button.addEventListener(
+                'click',
+                this._toggleDisplayForm.bind(this)
+            );
             this.$form.addEventListener('submit', this.onSubmit.bind(this));
         }
 

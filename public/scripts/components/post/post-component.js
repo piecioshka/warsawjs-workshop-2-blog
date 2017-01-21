@@ -4,14 +4,20 @@
     let Component = root.blog.views.Component;
 
     class PostComponent {
-        constructor(post) {
-            console.debug('Render component: PostComponent, id: %s', post.id);
-            this.render(post);
+        constructor(postModel) {
+            console.debug(
+                'Render component: PostComponent, id: %s',
+                postModel.id
+            );
+            this.render(postModel);
         }
 
-        render(post) {
+        render(postModel) {
             let template = document.querySelector('#template-post').innerHTML;
-            let compiledTemplate = Component.compile(template, post);
+            let compiledTemplate = Component.compile(
+                template,
+                postModel.toJSON()
+            );
             let $target = document.querySelector('#list-of-components');
             Component.render($target, compiledTemplate);
         }

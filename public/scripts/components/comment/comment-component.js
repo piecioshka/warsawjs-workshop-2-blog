@@ -4,14 +4,20 @@
     let Component = root.blog.views.Component;
 
     class CommentComponent {
-        constructor(comment) {
-            console.debug('Render component: CommentComponent, id: %s', comment.id);
-            this.render(comment);
+        constructor(commentModel) {
+            console.debug(
+                'Render component: CommentComponent, id: %s',
+                commentModel.id
+            );
+            this.render(commentModel);
         }
 
-        render(comment) {
+        render(commentModel) {
             let template = document.querySelector('#template-comment').innerHTML;
-            let compiledTemplate = Component.compile(template, comment);
+            let compiledTemplate = Component.compile(
+                template,
+                commentModel.toJSON()
+            );
             let $target = document.querySelector('#list-of-components');
             Component.render($target, compiledTemplate);
         }
