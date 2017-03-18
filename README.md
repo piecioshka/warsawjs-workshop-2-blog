@@ -29,6 +29,7 @@ Dla szybkich:
 
 * Wykorzystanie transpilera, np. Babel
 * Wykorzystanie bundlera, np. Webpack
+* Wykorzystanie task runnera, np. Gulp
 * Uprawnienia:
     * czytelnik:
         * nie dodaje artykułów
