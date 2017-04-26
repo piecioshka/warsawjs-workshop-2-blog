@@ -4,46 +4,79 @@
 
 ![](http://warsawjs.com/assets/images/logo/logo-transparent-240x240.png)
 
-## TODO LIST
+## Zakres funkcjonalności projektu
 
-Kolejność realizacji aplikacji:
+* [x] Posty: Dodawanie pojedynczego posta (C)
+* [x] Posty: Prezentacja wielu postów (R)
+* [x] Posty: Prezentacja pojedynczego posta (R)
+* [x] Komentarze: Dodawanie pojedynczego komentarza (C)
+* [x] Komentarze: Prezentacja wielu komentarzy (R)
+* [x] Posty: Usuwanie pojedynczego posta (D)
+* [x] Komentarze: Usuwanie pojedynczego komentarza (D)
+* [x] All: Potwierdzenie usuwania posta i komentarza
+* [x] Komentarze: Prezentacja fikcyjnych awatarów
+* [x] Komentarze: Licznik komentarzy
+* [x] All: Zabezpieczenie przed wpisaniem jednego długiego string-a
+* [ ] Posty: Edycja pojedynczego posta (U)
+* [ ] Komentarze: Edycja pojedynczego komentarza (U)
 
-1. Posty: Dodawanie pojedynczego posta (C)
-2. Posty: Prezentacja wielu postów (R)
-3. Posty: Prezentacja pojedynczego posta (R)
-4. Komentarze: Dodawanie pojedynczego komentarza (C)
-5. Komentarze: Prezentacja wielu komentarzy (R)
-6. Posty: Usuwanie pojedynczego posta (D)
-7. Komentarze: Usuwanie pojedynczego komentarza (D)
-8. All: Potwierdzenie usuwania posta i komentarza
-9. Komentarze: Prezentacja fikcyjnych awatarów
-10. Komentarze: Licznik komentarzy
-11. All: Zabezpieczenie przed wpisaniem jednego długiego string-a
+## Krok po kroku
 
-Dla szybkich:
+1. Stworzenie pliku index.html
+2. Wykorzystanie skrótu Emmet-a do zbudowania podstawowej struktury HTML.
+3. Ustawienie tytułu aplikacji
+4. Dołączenie frameworka Materialize wraz ikonami.
+5. Dołączenie customowych styli.
+6. Dołączenie takich bibliotek jak:
 
-12. Posty: Edycja pojedynczego posta (U)
-13. Komentarze: Edycja pojedynczego komentarza (U)
+    - unpkg.com/mustache
+    - unpkg.com/super-event-emitter
+    - unpkg.com/grapnel
+    - wzrd.in/standalone/uuid@latest
 
-## Zadania dodatkowe
+7. 
+8. 
+9. 
+10. 
+11. 
+12. 
+13. 
+14. 
+15. 
+16. 
+17. 
+18. 
+19. 
+20. 
+21. 
+22. 
+23. 
+24. 
+25. 
+26. 
+27. 
+28. 
+29. 
+30. 
+31. 
+32. 
+33. 
+34. 
+35. 
+36. 
+37. 
+38. 
+39. 
+40. 
+41. 
+42. Wykorzystanie captcha przy dodawaniu komentarzy
+43. Wpisywanie wyrazów komendami głosowymi (speech recognition)
+44. Filtry na brzydkie wyrazy
+45. 
 
-* Wykorzystanie transpilera, np. Babel
-* Wykorzystanie bundlera, np. Webpack
-* Wykorzystanie task runnera, np. Gulp
-* Uprawnienia:
-    * czytelnik:
-        * nie dodaje artykułów
-        * dodaje komentarze
-        * edytuje swoje komentarze
-    * redaktor (admin)
-        * dodaje artykuły
-        * dodaje komentarze
-        * edytuje wszystkie komentarze
-* Wykorzystanie captcha przy dodawaniu komentarzy
-* Wpisywanie wyrazów komendami głosowymi (speech recognition)
-* Filtry na brzydkie wyrazy
+---
 
-## Przydatne linki
+## Linki
 
 * http://materializecss.com/
 * https://cdnjs.com/
@@ -54,7 +87,7 @@ Dla szybkich:
 ### Wymiana kodu 
 
 * https://codeshare.io/
-* https://www.codewars.com/users/sign_in
+* https://www.codewars.com/
 
 ### Biblioteki
 
