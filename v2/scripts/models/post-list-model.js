@@ -12,7 +12,6 @@ function deserialize(string) {
 class PostListModel {
     constructor() {
         this._posts = [];
-        EventEmitter.mixin(this);
     }
 
     add(post) {
@@ -44,7 +43,7 @@ class PostListModel {
         this._posts.forEach(...args);
     }
 
-    findById(id) {
+    getById(id) {
         return this._posts.find(function (postModel) {
             return postModel._id === id;
         });

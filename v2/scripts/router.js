@@ -10,7 +10,7 @@ class Router {
 
         router.get('/post/:id', function (req) {
             let id = req.params.id;
-            let postModel = postListModel.findById(id);
+            let postModel = postListModel.getById(id);
 
             if (!postModel) {
                 console.warn('Post (id = "%s") is not exist', id);
@@ -27,8 +27,26 @@ class Router {
             router.navigate('/posts');
         });
 
+        router.get('/post/:id/edit', function (req) {
+            let id = req.params.id;
+            let postModel = postListModel.getById(id);
+
+            if (!postModel) {
+                console.warn('Post (id = "%s") is not exist', id);
+                return;
+            }
+
+            let form = new PostEditForm(postModel);
+            form.on('edit-post', function () {
+                router.navigate('/posts');
+            });
+        });
+
         router.get('/posts', function () {
-            new PostAddForm();
+            let form = new PostAddForm();
+            form.on('new-post', function (postModel) {
+                new PostComponent(postModel);
+            });
 
             postListModel.forEach(function (postModel) {
                 new PostComponent(postModel);

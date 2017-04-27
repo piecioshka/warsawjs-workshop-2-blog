@@ -28,7 +28,7 @@
 * [x] Posty: Prezentacja wielu postów (R)
 * [x] Posty: Prezentacja pojedynczego posta (R)
 * [x] Posty: Usuwanie pojedynczego posta (D)
-* [ ] Posty: Edycja pojedynczego posta (U)
+* [x] Posty: Edycja pojedynczego posta (U)
 * [ ] Komentarze: Dodawanie pojedynczego komentarza (C)
 * [ ] Komentarze: Prezentacja wielu komentarzy (R)
 * [ ] Komentarze: Usuwanie pojedynczego komentarza (D)
@@ -36,7 +36,7 @@
 * [ ] Komentarze: Licznik komentarzy
 * [ ] Komentarze: Edycja pojedynczego komentarza (U)
 * [ ] Misc: Potwierdzenie usuwania posta i komentarza
-* [ ] Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
+* [x] Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
 
 ## Krok po kroku
 
@@ -77,7 +77,7 @@
 ### JavaScript
 
 11. Stworzyć funkcję `setup` oraz uruchomić ją po załadowaniu DOMa.
-12. Przechwytywać wysłanie formularza (event `submit`).
+12. Przechwytywać wysłanie formularza (zdarzenie `submit`).
 13. Wyłączyć domyślne zachowanie tego zdarzenia za pomocą `preventDefault`.
 14. Pobrać dane z formularza za pomocą obiektu `FormData`.
     Jeśli pomimo wypełnienia formularza nie ma danych to zweryfikuj 2 rzeczy:
@@ -156,7 +156,7 @@
     renderowanie.
 46. Stworzyć mechanizm wyszukiwania modelu posta po jego identyfikatorze.
 47. Napisać funkcję, która konwertuje string do dokumentu HTML.
-48. Rozszerzyć listę postów o zdarzenia.
+48. Rozszerzyć formualrze do dodawania posta o zdarzenia.
 49. Nasłuchiwać na w routerze na `*`, aby czyścić za każdym razem zawartość 
     kontenera, w których zmieniają się komponenty.
 50. Dodać domyślne przekierowanie na stronę z listą postów. Dodać tutaj 
@@ -164,7 +164,7 @@
 51. Przerobić na komponent formularz do dodawania posta.
 52. Dodać plik z formularzem do pliku HTML.
 53. Przenieść przechwytywanie wysłania formularza do komponentu.
-54. Emitować event, gdy użytkownik doda nowy post.
+54. Emitować zdarzenie, gdy użytkownik doda nowy post.
 55. Nasłuchiwać na zdarzenie dodania nowego posta i stworzyć nowy komponent.
 56. Dodać wyświetlanie czasu stworzenia posta.
 
@@ -191,14 +191,16 @@
 
 ### JavaScript: Edycja posta
 
-62. 
-63. 
-64. 
-65. 
-66. 
-67. 
-68. 
-69. 
+62. Dodać link do edycji posta obok jego tytułu (w HTML)
+63. Stworzyć markup formularza do edycji posta na podstawie formularza do 
+    dodawania posta.
+64. Umieścić pola do interpolacji w polach formularza.
+65. Stworzyć nowy komponent na bazie formularza do edycji.
+66. Dołączyć nowy plik do HTMLa.
+67. Dodać nową ścieżkę w routingu dla edycji posta.
+68. W handlerze tej ścieżki stworzyć komponent edycji posta.
+69. Nasłuchiwać na pomyślną edycję posta i przekierować użytkownika na listę 
+    postów.
 70. 
 71. 
 72. 

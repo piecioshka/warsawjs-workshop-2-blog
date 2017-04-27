@@ -31,6 +31,8 @@
                     <a href="#!/post/{{ id }}">{{ title }}</a>
                     [<a class="red-text"
                         href="#!/post/{{ id }}/delete">Usuń</a>]
+                    [<a class="green-text"
+                        href="#!/post/{{ id }}/edit">Edytuj</a>]
                 </h2>
 
                 <small class="grey-text">{{ date }}</small>
@@ -45,7 +47,7 @@
         <div class="template-add-post-form">
             <div class="section">
                 <form action="" class="post-adding-form">
-                    <h3>Dodać post</h3>
+                    <h3>Dodaj post</h3>
 
                     <label>
                         Tytuł: <input type="text" name="post-title" required/>
@@ -56,6 +58,27 @@
                     </label>
 
                     <input class="btn" type="submit" value="Dodaj"/>
+                </form>
+            </div>
+
+            <div class="divider"></div>
+        </div>
+
+        <div class="template-edit-post-form">
+            <div class="section">
+                <form action="" class="post-adding-form">
+                    <h3>Edycja posta</h3>
+
+                    <label>
+                        Tytuł: <input type="text" name="post-title"
+                                      value="{{ title }}" required/>
+                    </label>
+                    <label>
+                        Opis: <textarea class="materialize-textarea"
+                                        name="post-content" required>{{ content }}</textarea>
+                    </label>
+
+                    <input class="btn" type="submit" value="Zapisz"/>
                 </form>
             </div>
 
@@ -73,6 +96,7 @@
 
     <script src="scripts/component/post-component.js"></script>
     <script src="scripts/component/post-add-form.js"></script>
+    <script src="scripts/component/post-edit-form.js"></script>
 
     <script src="scripts/router.js"></script>
     <script src="scripts/main.js"></script>

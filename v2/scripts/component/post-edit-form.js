@@ -1,10 +1,11 @@
-class PostAddForm {
+class PostEditForm {
     static compile(data) {
-        const TEMPLATE = document.querySelector('.template-add-post-form').innerHTML;
+        const TEMPLATE = document.querySelector('.template-edit-post-form').innerHTML;
         return Mustache.render(TEMPLATE, data);
     }
 
-    constructor() {
+    constructor(postModel) {
+        this._postModel = postModel;
         this.render();
         this.$element = document.querySelector('form');
         this.$element.addEventListener('submit', this._onSubmit.bind(this));
@@ -17,20 +18,16 @@ class PostAddForm {
         let formData = new FormData(this.$element);
         let formObject = castIterator(formData);
 
-        let postModel = new PostModel({
-            title: formObject['post-title'],
-            content: formObject['post-content']
-        });
-        postListModel.add(postModel);
-        this.trigger('new-post', postModel);
-        postListModel.save();
+        this._postModel._title = formObject['post-title'];
+        this._postModel._content = formObject['post-content'];
 
-        this.$element.reset();
+        postListModel.save();
+        this.trigger('edit-post');
     }
 
     render() {
         let $postList = document.querySelector('main');
-        let postTemplate = PostAddForm.compile();
+        let postTemplate = PostEditForm.compile(this._postModel.toJSON());
         let $post = toElement(postTemplate);
         $postList.appendChild($post);
     }

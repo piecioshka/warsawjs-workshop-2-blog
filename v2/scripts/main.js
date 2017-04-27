@@ -10,10 +10,6 @@ function castIterator(iterator) {
 }
 
 function setup() {
-    postListModel.on('new-post', function (postModel) {
-        new PostComponent(postModel);
-    });
-
     new Router();
 }
 
