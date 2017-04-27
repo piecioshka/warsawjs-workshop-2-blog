@@ -31,12 +31,15 @@
 * [x] Posty: Edycja pojedynczego posta (U)
 * [ ] Komentarze: Dodawanie pojedynczego komentarza (C)
 * [ ] Komentarze: Prezentacja wielu komentarzy (R)
-* [ ] Komentarze: Usuwanie pojedynczego komentarza (D)
-* [ ] Komentarze: Prezentacja fikcyjnych awatarów
 * [ ] Komentarze: Licznik komentarzy
+* [ ] Komentarze: Prezentacja fikcyjnych awatarów
+* [ ] Komentarze: Usuwanie pojedynczego komentarza (D)
 * [ ] Komentarze: Edycja pojedynczego komentarza (U)
+* [ ] Komentarze: Wykorzystanie captcha przy dodawaniu komentarzy
 * [ ] Misc: Potwierdzenie usuwania posta i komentarza
 * [x] Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
+* [ ] Misc: Wpisywanie wyrazów komendami głosowymi (speech recognition)
+* [ ] Misc: Filtry na brzydkie wyrazy
 
 ## Krok po kroku
 
@@ -50,8 +53,8 @@
     korzystając ze strony: http://materializecss.com/getting-started.html
 5. Stworzyć kontener do całej aplikacji.
 6. Dodać nagłówek pierwszego poziomu.
-7. Stworzyć markup do formularza do dodawania posta. Formularz powinien zawiera 
-    pola:
+7. Stworzyć markup do formularza do dodawania posta. Formularz powinien 
+    zawierać pola:
 
     - tytuł (pole wymagane)
     - opis (pole wymagane)
@@ -67,10 +70,10 @@
     na sztywno w markupie.
 9. Dołączyć następujące biblioteki jak:
 
-    - unpkg.com/mustache
-    - unpkg.com/super-event-emitter
-    - unpkg.com/grapnel
-    - wzrd.in/standalone/uuid@latest
+    - https://unpkg.com/mustache
+    - https://unpkg.com/super-event-emitter
+    - https://unpkg.com/grapnel
+    - https://wzrd.in/standalone/uuid@latest
 
 10. Stworzyć główny pliku projektu: `main.js` i dołączenie go do strony.
 
@@ -104,7 +107,7 @@
 22. Po wykorzystaniu danych z formularza wyczyścić zawartość pól. Wykorzystać
     do tego funkcję `reset`.
 
-### JavaScript: Advanced
+### JavaScript: Stworzenie architektury modeli
 
 23. Stworzyć tablicę postów, która będzie uzupełniana formularzem do 
     dodawania postów. 
@@ -116,13 +119,13 @@
 28. Przenieść jego definicję do osobnego pliku (dołączyć w pliku HTML).
 29. Przenieść renderowanie proces renderowania listy postów do modelu listy 
     postów.
-30. Stworzyć funkcję toJSON w modelu posta, która będzie zwracała obiekt z 
+30. Stworzyć funkcję `toJSON` w modelu posta, która będzie zwracała obiekt z 
     właściwościami.
 
 ### JavaScript: LocalStorage
 
 31. Zrobić funkcję `save` w modelu listy postów.
-32. Funkcja `save` powinna serializować obiekt postów i zapisywać go do 
+32. Funkcja `save` powinna zserializować obiekt postów i zapisywać go do 
     `LocalStorage`. 
 33. Napisać funkcję `restore` w modelu posta. Funkcja powinna zawracać 
     instancję posta, wraz z ustawionym unikalnym identyfikatorem.
@@ -135,16 +138,16 @@
 
 ### JavaScript: Routing
 
-38. Stworzyć router wykorzystując narzędzie Grepnel.
+38. Stworzyć `router` wykorzystując narzędzie Grepnel.
 39. Dodać ścieżki:
 
     - dla listy postów
     - dla pojedynczego posta
 
-40. Dołączyć router do pliku HTML.
+40. Dołączyć `router` do pliku HTML.
 41. Zamienić tytuł posta w link definiując odpowiedni URL.
 42. Zamienić tytuł strony w link, kierujący do głównej strony.
-43. Konfigurujemy Grepnel-a, aby korzystał z hashbang.
+43. Konfigurujemy Grepnel-a, aby korzystał z `hashbang`.
 44. Stworzyć katalog na modele i przenieść do niego aktualne 2 modele:
 
     - model listy postów
@@ -156,11 +159,11 @@
     renderowanie.
 46. Stworzyć mechanizm wyszukiwania modelu posta po jego identyfikatorze.
 47. Napisać funkcję, która konwertuje string do dokumentu HTML.
-48. Rozszerzyć formualrze do dodawania posta o zdarzenia.
+48. Rozszerzyć formularze do dodawania posta o zdarzenia.
 49. Nasłuchiwać na w routerze na `*`, aby czyścić za każdym razem zawartość 
     kontenera, w których zmieniają się komponenty.
 50. Dodać domyślne przekierowanie na stronę z listą postów. Dodać tutaj 
-    sprawdzenie, czy już nie jest jakiś hash ustawiony.
+    sprawdzenie, czy już nie jest jakiś ustawiony `hash`.
 51. Przerobić na komponent formularz do dodawania posta.
 52. Dodać plik z formularzem do pliku HTML.
 53. Przenieść przechwytywanie wysłania formularza do komponentu.
@@ -172,7 +175,7 @@
 
     - grey-text
 
-### JavaScript: Usuwanie posta
+### JavaScript: Feature: Usuwanie posta
 
 57. Dodać link do usuwania posta (obok tytułu).
 
@@ -189,7 +192,7 @@
 61. Dodać zabezpieczenie przed długimi ciągami znaków, które przekraczają 
     szerokość kontenera. 
 
-### JavaScript: Edycja posta
+### JavaScript: Feature: Edycja posta
 
 62. Dodać link do edycji posta obok jego tytułu (w HTML)
 63. Stworzyć markup formularza do edycji posta na podstawie formularza do 
@@ -201,23 +204,6 @@
 68. W handlerze tej ścieżki stworzyć komponent edycji posta.
 69. Nasłuchiwać na pomyślną edycję posta i przekierować użytkownika na listę 
     postów.
-70. 
-71. 
-72. 
-73. 
-74. 
-75. 
-76. 
-77. 
-78. 
-79. 
-80. 
-
---- 
-
-0. Wykorzystanie captcha przy dodawaniu komentarzy
-0. Wpisywanie wyrazów komendami głosowymi (speech recognition)
-0. Filtry na brzydkie wyrazy
 
 ---
 
