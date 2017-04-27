@@ -6,7 +6,7 @@
 
 ## Zakres funkcjonalności projektu
 
-### v1 [Demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v1/)
+### v1 [ [demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v1/) ]
 
 * [x] Posty: Dodawanie pojedynczego posta (C)
 * [x] Posty: Prezentacja wielu postów (R)
@@ -22,7 +22,7 @@
 * [x] Misc: Potwierdzenie usuwania posta i komentarza
 * [x] Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
 
-### v2 [Demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v2/)
+### v2 [ [demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v2/) ]
 
 * [x] Posty: Dodawanie pojedynczego posta (C)
 * [x] Posty: Prezentacja wielu postów (R)
