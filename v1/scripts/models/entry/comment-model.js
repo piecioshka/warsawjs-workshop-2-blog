@@ -20,7 +20,7 @@
                 id: this.id,
                 body: this.body,
                 postId: this.postId
-            }
+            };
         }
     }
 

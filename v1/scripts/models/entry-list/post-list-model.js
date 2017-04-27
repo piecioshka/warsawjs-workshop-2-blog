@@ -5,7 +5,7 @@
 
     class PostListModel extends EntryListModel {
         constructor(...args) {
-            super(...args)
+            super(...args);
         }
     }
 

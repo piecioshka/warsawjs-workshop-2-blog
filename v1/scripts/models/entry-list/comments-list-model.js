@@ -6,7 +6,6 @@
     class CommentListModel extends EntryListModel {
         constructor(comments) {
             super();
-
             this.entries = comments;
         }
     }

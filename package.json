@@ -3,6 +3,6 @@
     "name": "warsawjs-workshop-2-blog",
     "version": "0.0.0",
     "scripts": {
-        "count": "find public/scripts -name '*.js' | xargs wc -l | sort -r"
+        "count": "find v1/scripts -name '*.js' | xargs wc -l | sort -r"
     }
 }

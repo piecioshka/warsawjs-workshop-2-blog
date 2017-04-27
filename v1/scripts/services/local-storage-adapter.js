@@ -11,8 +11,8 @@
 
             try {
                 posts = JSON.parse(posts);
-            } catch (e) {
-                console.error(e);
+            } catch (err) {
+                console.error(err);
             }
 
             callback(null, posts || []);

@@ -29,7 +29,7 @@
                 title: this.title,
                 body: this.body,
                 comments: this.comments.toJSON()
-            }
+            };
         }
     }
 

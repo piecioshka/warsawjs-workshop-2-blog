@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"
+          rel="stylesheet"/>
+    <link href="styles/main.css"
+          rel="stylesheet"/>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>
+            <a href="#!/">Blog</a>
+        </h1>
+
+        <main class="section"></main>
+    </div>
+
+    <!-- Templates definitions -->
+    <div class="hide">
+        <div class="template-post">
+            <section class="section">
+                <h2>
+                    <a href="#!/post/{{ id }}">{{ title }}</a>
+                    [<a class="red-text"
+                        href="#!/post/{{ id }}/delete">Usuń</a>]
+                </h2>
+
+                <small class="grey-text">{{ date }}</small>
+
+                <article>
+                    <p>{{ content }}</p>
+                </article>
+            </section>
+            <div class="divider"></div>
+        </div>
+
+        <div class="template-add-post-form">
+            <div class="section">
+                <form action="" class="post-adding-form">
+                    <h3>Dodać post</h3>
+
+                    <label>
+                        Tytuł: <input type="text" name="post-title" required/>
+                    </label>
+                    <label>
+                        Opis: <textarea class="materialize-textarea"
+                                        name="post-content" required></textarea>
+                    </label>
+
+                    <input class="btn" type="submit" value="Dodaj"/>
+                </form>
+            </div>
+
+            <div class="divider"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/mustache"></script>
+    <script src="https://unpkg.com/super-event-emitter"></script>
+    <script src="https://unpkg.com/grapnel"></script>
+    <script src="https://wzrd.in/standalone/uuid@latest"></script>
+
+    <script src="scripts/models/post-list-model.js"></script>
+    <script src="scripts/models/post-model.js"></script>
+
+    <script src="scripts/component/post-component.js"></script>
+    <script src="scripts/component/post-add-form.js"></script>
+
+    <script src="scripts/router.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
