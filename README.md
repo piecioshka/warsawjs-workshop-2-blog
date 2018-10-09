@@ -1,8 +1,8 @@
 # warsawjs-workshop-2-blog
 
-> Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
+Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
 
-![](http://warsawjs.com/assets/images/logo/logo-transparent-240x240.png)
+![](images/logo-warsawjs-transparent-240x240.png)
 
 ## Zakres funkcjonalności projektu
 
@@ -49,11 +49,11 @@
 
 2. Wykorzystać skrót Emmet-a do zbudowania podstawowej struktury HTML.
 3. Ustawić tytuł aplikacji
-4. Dołączyć framework Materialize (tylko plik CSS) wraz ikonami 
+4. Dołączyć framework Materialize (tylko plik CSS) wraz ikonami
     korzystając ze strony: http://materializecss.com/getting-started.html
 5. Stworzyć kontener do całej aplikacji.
 6. Dodać nagłówek pierwszego poziomu.
-7. Stworzyć markup do formularza do dodawania posta. Formularz powinien 
+7. Stworzyć markup do formularza do dodawania posta. Formularz powinien
     zawierać pola:
 
     - tytuł (pole wymagane)
@@ -84,16 +84,16 @@
 13. Wyłączyć domyślne zachowanie tego zdarzenia za pomocą `preventDefault`.
 14. Pobrać dane z formularza za pomocą obiektu `FormData`.
     Jeśli pomimo wypełnienia formularza nie ma danych to zweryfikuj 2 rzeczy:
-    
+
     - czy na pewno przekazuje referencję do formularza jako argument?
     - czy każdy z inputów posiada atrybut `name`?
 
-15. Wyświetlić za pomocą pętli `for..of` dane wpisane do formularza dodawania 
+15. Wyświetlić za pomocą pętli `for..of` dane wpisane do formularza dodawania
     posta.
 16. Stworzyć funkcję, która przekonwertuje obiekt `FormData` na zwykły obiekt.
-17. Zbudować funkcję, która na podstawie danych przekazanych w parametrze 
+17. Zbudować funkcję, która na podstawie danych przekazanych w parametrze
     skompiluje te dane i wygeneruje prosty markup HTML.
-18. Przenieść markup pojedynczego posta do nowo stworzonego kontenera z 
+18. Przenieść markup pojedynczego posta do nowo stworzonego kontenera z
     szablonami.
 19. Ukryć kontener zawierający listę szablonów.
 
@@ -102,38 +102,38 @@
     - hide
 
 20. Wyczyścić zawartość kontenera zawierającego listę postów.
-21. Stworzyć funkcję `render`, która będzie dodawała do kontenera z listą 
+21. Stworzyć funkcję `render`, która będzie dodawała do kontenera z listą
     postów wynik funkcji kompilującej dane z szablonem.
 22. Po wykorzystaniu danych z formularza wyczyścić zawartość pól. Wykorzystać
     do tego funkcję `reset`.
 
 ### JavaScript: Stworzenie architektury modeli
 
-23. Stworzyć tablicę postów, która będzie uzupełniana formularzem do 
-    dodawania postów. 
+23. Stworzyć tablicę postów, która będzie uzupełniana formularzem do
+    dodawania postów.
 24. Po dodaniu posta zebrane dane dodać do tablicy.
 25. Stworzyć model listy postów.
 26. Przenieść jego definicję do osobnego pliku (dołączyć w pliku HTML).
 27. Stworzyć model obiekt postu, który będzie posiadał unikalny identyfikator
     tworzony podczas konstrukcji obiektu.
 28. Przenieść jego definicję do osobnego pliku (dołączyć w pliku HTML).
-29. Przenieść renderowanie proces renderowania listy postów do modelu listy 
+29. Przenieść renderowanie proces renderowania listy postów do modelu listy
     postów.
-30. Stworzyć funkcję `toJSON` w modelu posta, która będzie zwracała obiekt z 
+30. Stworzyć funkcję `toJSON` w modelu posta, która będzie zwracała obiekt z
     właściwościami.
 
 ### JavaScript: LocalStorage
 
 31. Zrobić funkcję `save` w modelu listy postów.
-32. Funkcja `save` powinna zserializować obiekt postów i zapisywać go do 
-    `LocalStorage`. 
-33. Napisać funkcję `restore` w modelu posta. Funkcja powinna zawracać 
+32. Funkcja `save` powinna zserializować obiekt postów i zapisywać go do
+    `LocalStorage`.
+33. Napisać funkcję `restore` w modelu posta. Funkcja powinna zawracać
     instancję posta, wraz z ustawionym unikalnym identyfikatorem.
-36. Napisać funkcję `load`, która pobierała z `localStorage` zserializowaną 
+36. Napisać funkcję `load`, która pobierała z `localStorage` zserializowaną
     listę postów oraz przywracała modele postów.
 34. Uruchomić `restore` zaraz po stworzeniu modelu listy postów.
 35. Uruchomić `render` list postów zaraz po załadowaniu list postów.
-37. Przenieść do stałej klucz, pod którym zapisywana jest lista postów w 
+37. Przenieść do stałej klucz, pod którym zapisywana jest lista postów w
     `localStorage`.
 
 ### JavaScript: Routing
@@ -155,14 +155,14 @@
 
 ### JavaScript: Komponenty
 
-45. Stworzenie komponentu pojedynczego posta i przeniesienie procesu 
+45. Stworzenie komponentu pojedynczego posta i przeniesienie procesu
     renderowanie.
 46. Stworzyć mechanizm wyszukiwania modelu posta po jego identyfikatorze.
 47. Napisać funkcję, która konwertuje string do dokumentu HTML.
 48. Rozszerzyć formularze do dodawania posta o zdarzenia.
-49. Nasłuchiwać na w routerze na `*`, aby czyścić za każdym razem zawartość 
+49. Nasłuchiwać na w routerze na `*`, aby czyścić za każdym razem zawartość
     kontenera, w których zmieniają się komponenty.
-50. Dodać domyślne przekierowanie na stronę z listą postów. Dodać tutaj 
+50. Dodać domyślne przekierowanie na stronę z listą postów. Dodać tutaj
     sprawdzenie, czy już nie jest jakiś ustawiony `hash`.
 51. Przerobić na komponent formularz do dodawania posta.
 52. Dodać plik z formularzem do pliku HTML.
@@ -189,35 +189,35 @@
 
 ### CSS
 
-61. Dodać zabezpieczenie przed długimi ciągami znaków, które przekraczają 
-    szerokość kontenera. 
+61. Dodać zabezpieczenie przed długimi ciągami znaków, które przekraczają
+    szerokość kontenera.
 
 ### JavaScript: Feature: Edycja posta
 
 62. Dodać link do edycji posta obok jego tytułu (w HTML)
-63. Stworzyć markup formularza do edycji posta na podstawie formularza do 
+63. Stworzyć markup formularza do edycji posta na podstawie formularza do
     dodawania posta.
 64. Umieścić pola do interpolacji w polach formularza.
 65. Stworzyć nowy komponent na bazie formularza do edycji.
 66. Dołączyć nowy plik do HTMLa.
 67. Dodać nową ścieżkę w routingu dla edycji posta.
 68. W handlerze tej ścieżki stworzyć komponent edycji posta.
-69. Nasłuchiwać na pomyślną edycję posta i przekierować użytkownika na listę 
+69. Nasłuchiwać na pomyślną edycję posta i przekierować użytkownika na listę
     postów.
 
 ---
 
 ## Linki
 
-* http://materializecss.com/
-* https://cdnjs.com/
-* https://unpkg.com/
-* https://wzrd.in/
-* http://avatars.adorable.io/
+* <http://materializecss.com/>
+* <https://cdnjs.com/>
+* <https://unpkg.com/>
+* <https://wzrd.in/>
+* <http://avatars.adorable.io/>
 
 ### Biblioteki
 
-* https://github.com/janl/mustache.js
-* https://github.com/kelektiv/node-uuid
-* https://github.com/baseprime/grapnel
-* https://github.com/piecioshka/super-event-emitter
+* <https://github.com/janl/mustache.js>
+* <https://github.com/kelektiv/node-uuid>
+* <https://github.com/baseprime/grapnel>
+* <https://github.com/piecioshka/super-event-emitter>
