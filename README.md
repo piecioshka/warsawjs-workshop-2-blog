@@ -4,44 +4,44 @@ Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
 
 ![](images/logo-warsawjs-transparent-240x240.png)
 
-## Zakres funkcjonalności projektu
+## Features
 
 ### v1 [ [demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v1/) ]
 
-* [x] Posty: Dodawanie pojedynczego posta (C)
-* [x] Posty: Prezentacja wielu postów (R)
-* [x] Posty: Prezentacja pojedynczego posta (R)
-* [x] Posty: Usuwanie pojedynczego posta (D)
-* [ ] Posty: Edycja pojedynczego posta (U)
-* [x] Komentarze: Dodawanie pojedynczego komentarza (C)
-* [x] Komentarze: Prezentacja wielu komentarzy (R)
-* [x] Komentarze: Usuwanie pojedynczego komentarza (D)
-* [x] Komentarze: Prezentacja fikcyjnych awatarów
-* [x] Komentarze: Licznik komentarzy
-* [ ] Komentarze: Edycja pojedynczego komentarza (U)
-* [x] Misc: Potwierdzenie usuwania posta i komentarza
-* [x] Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
+* :white_check_mark: Posty: Dodawanie pojedynczego posta (C)
+* :white_check_mark: Posty: Prezentacja wielu postów (R)
+* :white_check_mark: Posty: Prezentacja pojedynczego posta (R)
+* :white_check_mark: Posty: Usuwanie pojedynczego posta (D)
+* :no_entry: Posty: Edycja pojedynczego posta (U)
+* :white_check_mark: Komentarze: Dodawanie pojedynczego komentarza (C)
+* :white_check_mark: Komentarze: Prezentacja wielu komentarzy (R)
+* :white_check_mark: Komentarze: Usuwanie pojedynczego komentarza (D)
+* :white_check_mark: Komentarze: Prezentacja fikcyjnych awatarów
+* :white_check_mark: Komentarze: Licznik komentarzy
+* :no_entry: Komentarze: Edycja pojedynczego komentarza (U)
+* :white_check_mark: Misc: Potwierdzenie usuwania posta i komentarza
+* :white_check_mark: Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
 
 ### v2 [ [demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v2/) ]
 
-* [x] Posty: Dodawanie pojedynczego posta (C)
-* [x] Posty: Prezentacja wielu postów (R)
-* [x] Posty: Prezentacja pojedynczego posta (R)
-* [x] Posty: Usuwanie pojedynczego posta (D)
-* [x] Posty: Edycja pojedynczego posta (U)
-* [ ] Komentarze: Dodawanie pojedynczego komentarza (C)
-* [ ] Komentarze: Prezentacja wielu komentarzy (R)
-* [ ] Komentarze: Licznik komentarzy
-* [ ] Komentarze: Prezentacja fikcyjnych awatarów
-* [ ] Komentarze: Usuwanie pojedynczego komentarza (D)
-* [ ] Komentarze: Edycja pojedynczego komentarza (U)
-* [ ] Komentarze: Wykorzystanie captcha przy dodawaniu komentarzy
-* [ ] Misc: Potwierdzenie usuwania posta i komentarza
-* [x] Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
-* [ ] Misc: Wpisywanie wyrazów komendami głosowymi (speech recognition)
-* [ ] Misc: Filtry na brzydkie wyrazy
+* :white_check_mark: Posty: Dodawanie pojedynczego posta (C)
+* :white_check_mark: Posty: Prezentacja wielu postów (R)
+* :white_check_mark: Posty: Prezentacja pojedynczego posta (R)
+* :white_check_mark: Posty: Usuwanie pojedynczego posta (D)
+* :white_check_mark: Posty: Edycja pojedynczego posta (U)
+* :no_entry: Komentarze: Dodawanie pojedynczego komentarza (C)
+* :no_entry: Komentarze: Prezentacja wielu komentarzy (R)
+* :no_entry: Komentarze: Licznik komentarzy
+* :no_entry: Komentarze: Prezentacja fikcyjnych awatarów
+* :no_entry: Komentarze: Usuwanie pojedynczego komentarza (D)
+* :no_entry: Komentarze: Edycja pojedynczego komentarza (U)
+* :no_entry: Komentarze: Wykorzystanie captcha przy dodawaniu komentarzy
+* :no_entry: Misc: Potwierdzenie usuwania posta i komentarza
+* :white_check_mark: Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
+* :no_entry: Misc: Wpisywanie wyrazów komendami głosowymi (speech recognition)
+* :no_entry: Misc: Filtry na brzydkie wyrazy
 
-## Krok po kroku
+## Krok po kroku 👣
 
 1. Stworzenie pliku `index.html`
 
