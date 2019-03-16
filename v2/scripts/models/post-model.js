@@ -7,7 +7,7 @@ class PostModel {
     }
 
     constructor({ title, content }) {
-        this._id = uuid.v4();
+        this._id = uuid();
         this._date = Date.now();
         this._title = title;
         this._content = content;

@@ -1,8 +1,12 @@
 # warsawjs-workshop-2-blog
 
-Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
+Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
 
-![](images/logo-warsawjs-transparent-240x240.png)
+<img
+    src="https://warsawjs.com/static/images/logos/logo-warsawjs-with-white-text.svg"
+    alt=""
+    width="300"
+/>
 
 ## Features
 
@@ -50,7 +54,7 @@ Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
 2. Wykorzystać skrót Emmet-a do zbudowania podstawowej struktury HTML.
 3. Ustawić tytuł aplikacji
 4. Dołączyć framework Materialize (tylko plik CSS) wraz ikonami
-    korzystając ze strony: http://materializecss.com/getting-started.html
+    korzystając ze strony: <https://materializecss.com/getting-started.html>
 5. Stworzyć kontener do całej aplikacji.
 6. Dodać nagłówek pierwszego poziomu.
 7. Stworzyć markup do formularza do dodawania posta. Formularz powinien
@@ -70,10 +74,10 @@ Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
     na sztywno w markupie.
 9. Dołączyć następujące biblioteki jak:
 
-    - https://unpkg.com/mustache
-    - https://unpkg.com/super-event-emitter
-    - https://unpkg.com/grapnel
-    - https://wzrd.in/standalone/uuid@latest
+    - <https://github.com/janl/mustache.js>
+    - <https://github.com/kelektiv/node-uuid>
+    - <https://github.com/visionmedia/page.js>
+    - <https://github.com/piecioshka/super-event-emitter>
 
 10. Stworzyć główny pliku projektu: `main.js` i dołączenie go do strony.
 
@@ -209,15 +213,8 @@ Testowa aplikacja stworzona na potrzeby WarsawJS Workshop #2
 
 ## Linki
 
-* <http://materializecss.com/>
+* <https://materializecss.com/>
 * <https://cdnjs.com/>
 * <https://unpkg.com/>
 * <https://wzrd.in/>
-* <http://avatars.adorable.io/>
-
-### Biblioteki
-
-* <https://github.com/janl/mustache.js>
-* <https://github.com/kelektiv/node-uuid>
-* <https://github.com/baseprime/grapnel>
-* <https://github.com/piecioshka/super-event-emitter>
+* <https://avatars.adorable.io/>

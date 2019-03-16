@@ -1,14 +1,20 @@
 class Router {
     constructor() {
-        let router = new Grapnel({ hashBang: true });
+        let router = page.create({ window });
+        router.base(location.pathname);
 
-        router.get('*', function (req, evt) {
-            console.log('[routing] path = "%s"', evt.value);
+        function clearRouterOutlet() {
             let $postList = document.querySelector('main');
             $postList.innerHTML = '';
+        }
+
+        router('*', function (context, next) {
+            console.log('[routing] path = "%s"', context.path);
+            clearRouterOutlet();
+            next();
         });
 
-        router.get('/post/:id', function (req) {
+        router('/post/:id', function (req) {
             let id = req.params.id;
             let postModel = postListModel.getById(id);
 
@@ -20,14 +26,14 @@ class Router {
             new PostComponent(postModel);
         });
 
-        router.get('/post/:id/delete', function (req) {
+        router('/post/:id/delete', function (req) {
             let id = req.params.id;
             postListModel.deleteById(id);
             postListModel.save();
-            router.navigate('/posts');
+            router.redirect('/');
         });
 
-        router.get('/post/:id/edit', function (req) {
+        router('/post/:id/edit', function (req) {
             let id = req.params.id;
             let postModel = postListModel.getById(id);
 
@@ -38,12 +44,13 @@ class Router {
 
             let form = new PostEditForm(postModel);
             form.on('edit-post', function () {
-                router.navigate('/posts');
+                router.redirect('/');
             });
         });
 
-        router.get('/posts', function () {
+        router('/', function () {
             let form = new PostAddForm();
+
             form.on('new-post', function (postModel) {
                 new PostComponent(postModel);
             });
@@ -53,12 +60,8 @@ class Router {
             });
         });
 
-        router.get('/', function () {
-            router.navigate('/posts');
+        router({
+            hashbang: true,
         });
-
-        if (!router.state.value) {
-            router.navigate('/posts');
-        }
     }
 }

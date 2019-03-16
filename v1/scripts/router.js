@@ -3,37 +3,42 @@
 
     let Router = {
         setup(controller) {
+            console.log('Router#setup');
+            this._router = page.create({ window });
+            this._router.base(location.pathname);
             this._controller = controller;
-            this._router = new Grapnel({ hashBang: true });
 
             this._setupRoutes();
-            this._setDefaultPath();
         },
 
         _setupRoutes() {
-            let router = this._router;
-            let controller = this._controller;
+            console.log('Router#_setupRoutes');
+            let ctrl = this._controller;
 
-            router.get('/', controller.onPostListHandler.bind(controller));
-            router.get('/posts/:id', controller.onPostHandler.bind(controller));
-            router.get(
-                '/posts/:id/delete',
-                controller.onPostRemoveHandler.bind(controller)
-            );
-            router.get(
-                '/posts/:postId/comment/:commentId/delete',
-                controller.onCommentRemoveHandler.bind(controller)
-            );
+            const routes = {
+                '/': ctrl.onPostListHandler.bind(ctrl),
+                '/posts/:id': ctrl.onPostHandler.bind(ctrl),
+                '/posts/:id/delete': ctrl.onPostRemoveHandler.bind(ctrl),
+                '/posts/:postId/comment/:commentId/delete': ctrl.onCommentRemoveHandler.bind(ctrl),
+                "*": (req, route) => {
+                    if (!route.parent()) {
+                        console.log({ req, route });
+                    }
+                }
+            };
+
+            Object.keys(routes).forEach((route) => {
+                const handler = routes[route];
+                this._router(route, handler);
+            });
+
+            this._router({
+                hashbang: true,
+            });
         },
 
-        _setDefaultPath() {
-            if (!this._router.path()) {
-                this._router.navigate('/');
-            }
-        },
-
-        navigate(...args) {
-            return this._router.navigate(...args);
+        navigate(url) {
+            return this._router.redirect(url);
         }
     };
 

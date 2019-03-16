@@ -3,7 +3,7 @@
 
     class EntryModel {
         constructor(data) {
-            this.id = data.id || root.uuid.v4();
+            this.id = data.id || root.uuid();
         }
 
         toJSON() {
