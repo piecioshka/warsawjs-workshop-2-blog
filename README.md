@@ -3,10 +3,27 @@
 Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
 
 <img
-    src="https://warsawjs.com/static/images/logos/logo-warsawjs-with-white-text.svg"
-    alt=""
-    width="300"
+    src="https://warsawjs.com/static/images/logos/logo-warsawjs.svg"
+    width="400"
+    alt="WarsawJS"
 />
+
+## Czego będziemy się uczyli?
+
+* Asynchroniczność
+    + [Callback](chapters/javascript/core/callbacks.md)
+    + [Promise](chapters/javascript/core/promises.md)
+* Wzorce projektowe:
+    + MVC
+    + Obserwator
+    + Metoda szablonowa
+    + Dependency Injection
+* Mechanizm systemu szablonów
+* Rejestr paczek `npm` albo serwery CDN
+* Routing
+* Rendering
+* Walidacja formularza (zabezpieczenie przed XSS)
+* Przestrzeń nazw _(en. Namespace)_
 
 ## Features
 
