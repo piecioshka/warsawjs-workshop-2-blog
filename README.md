@@ -73,12 +73,10 @@ Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
 * Stworzyć markup do listy postów. Zrobić przykładowe 2 posty. Tekst zabity
     na sztywno w markupie.
 * Dołączyć następujące biblioteki jak:
-
     + <https://github.com/janl/mustache.js>
     + <https://github.com/kelektiv/node-uuid>
     + <https://github.com/visionmedia/page.js>
     + <https://github.com/piecioshka/super-event-emitter>
-
 * Stworzyć główny pliku projektu: `main.js` i dołączenie go do strony.
 
 ### JavaScript
@@ -86,15 +84,13 @@ Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
 * Stworzyć funkcję `setup` oraz uruchomić ją po załadowaniu DOMa.
 * Przechwytywać wysłanie formularza (zdarzenie `submit`).
 * Wyłączyć domyślne zachowanie tego zdarzenia za pomocą `preventDefault`.
-* Pobrać dane z formularza za pomocą obiektu `FormData`.
-    Jeśli pomimo wypełnienia formularza nie ma danych to zweryfikuj 2 rzeczy:
-
+* Pobrać dane z formularza za pomocą obiektu `FormData`. Jeśli pomimo wypełnienia
+    formularza nie ma danych to zweryfikuj 2 rzeczy:
     + czy na pewno przekazuje referencję do formularza jako argument?
     + czy każdy z inputów posiada atrybut `name`?
-
 * Wyświetlić za pomocą pętli `for..of` dane wpisane do formularza dodawania
     posta.
-* Stworzyć funkcję, która przekonwertuje obiekt `FormData` na zwykły obiekt.
+* Wykorzystać kolekcją `Map` które `FormData` na zwykły obiekt.
 * Zbudować funkcję, która na podstawie danych przekazanych w parametrze
     skompiluje te dane i wygeneruje prosty markup HTML.
 * Przenieść markup pojedynczego posta do nowo stworzonego kontenera z
@@ -197,8 +193,8 @@ Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
 <details><summary>JavaScript</summary>
 
 * Asynchroniczność
-    + [Callback](chapters/javascript/core/callbacks.md)
-    + [Promise](chapters/javascript/core/promises.md)
+    + Callback
+    + Promise
 * Wzorce projektowe:
     + MVC
     + Obserwator
