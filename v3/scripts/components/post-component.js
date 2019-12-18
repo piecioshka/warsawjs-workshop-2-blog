@@ -24,10 +24,15 @@ class PostComponent {
         $button.classList.add('btn', 'btn-danger', 'float-right');
         $button.textContent = 'Usuń';
         $button.addEventListener('click', () => {
-            // Update the model
-            removePostById(this.post.get('id'));
-            // Update the view
-            $button.parentElement.remove();
+            const status = confirm('Czy na pewno chcesz usunąć tego posta?')
+
+            if (status) {
+                // Update the model
+                removePostById(this.post.get('id'));
+
+                // Update the view
+                $button.parentElement.remove();
+            }
         });
         $target.append($button);
     }
