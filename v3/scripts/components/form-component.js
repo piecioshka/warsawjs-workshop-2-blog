@@ -3,6 +3,7 @@ class FormComponent {
         const $title = document.createElement('input');
         $title.setAttribute('placeholder', 'Wpisz tytuł ...');
         $title.setAttribute('name', 'title');
+        $title.setAttribute('required', 'true');
         $title.classList.add('form-control', 'my-3');
         $form.append($title);
     }
@@ -11,6 +12,7 @@ class FormComponent {
         const $body = document.createElement('textarea');
         $body.setAttribute('placeholder', 'Wpisz treść ...');
         $body.setAttribute('name', 'body');
+        $body.setAttribute('required', 'true');
         $body.classList.add('form-control', 'my-3');
         $form.append($body);
     }

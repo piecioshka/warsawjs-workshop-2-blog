@@ -6,7 +6,10 @@ class PostComponent {
 
     createTitle($target) {
         const $title = document.createElement('h2');
-        $title.textContent = this.post.get('title');
+        const $link = document.createElement('a');
+        $link.textContent = this.post.get('title');
+        $link.href = "#/posts/" + this.post.get('id');
+        $title.append($link);
         $target.append($title);
     }
 
