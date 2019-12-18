@@ -3,7 +3,7 @@ class Routing {
     table = [
         { path: '/posts/', page: this._setupPost },
         { path: '/', page: this._setupHome },
-    ]
+    ];
 
     constructor($target) {
         window.addEventListener('hashchange', () => {

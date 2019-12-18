@@ -19,6 +19,19 @@ class PostComponent {
         $target.append($body);
     }
 
+    createRemoveButton($target) {
+        const $button = document.createElement('button');
+        $button.classList.add('btn', 'btn-danger', 'float-right');
+        $button.textContent = 'Usuń';
+        $button.addEventListener('click', () => {
+            // Update the model
+            removePostById(this.post.get('id'));
+            // Update the view
+            $button.parentElement.remove();
+        });
+        $target.append($button);
+    }
+
     createDate($target) {
         const $date = document.createElement('small');
         $date.textContent = this.post.get('createdTime');
@@ -28,6 +41,7 @@ class PostComponent {
     display($target) {
         const $post = document.createElement('article');
         $post.classList.add('post');
+        this.createRemoveButton($post);
         this.createTitle($post);
         this.createDate($post);
         this.createBody($post);
