@@ -23,6 +23,9 @@ class HomePage {
         const $postForm = postForm.display($page);
         // const self = this;
 
+        this.removePostList($page);
+        this.displayPostList($page);
+
         $postForm.addEventListener('submit', (evt) => {
             evt.preventDefault();
             const data = new FormData($postForm);
@@ -32,6 +35,8 @@ class HomePage {
             post.set('id', (Math.random() * 100000).toFixed(0));
 
             posts.push(post);
+            const serializedPosts = serializePostCollection();
+            MyStorage.save('posts', serializedPosts);
 
             $postForm.reset();
             this.removePostList($page);
