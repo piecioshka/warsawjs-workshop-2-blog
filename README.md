@@ -45,6 +45,43 @@ Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
 * :no_entry: Misc: Wpisywanie wyrazów komendami głosowymi (speech recognition)
 * :no_entry: Misc: Filtry na brzydkie wyrazy
 
+### v3 [ [demo](https://piecioshka.github.io/warsawjs-workshop-2-blog/v3/) ]
+
+* :no_entry: Posty: Prezentacja wielu postów (R)
+* :no_entry: Posty: Dodawanie pojedynczego posta (C)
+* :no_entry: Posty: Usuwanie pojedynczego posta (D)
+* :no_entry: Posty: Edycja pojedynczego posta (U)
+* :no_entry: Komentarze: Prezentacja wielu komentarzy (R)
+* :no_entry: Komentarze: Dodawanie pojedynczego komentarza (C)
+* :no_entry: Komentarze: Usuwanie pojedynczego komentarza (D)
+* :no_entry: Misc: Zabezpieczenie przed wpisaniem jednego długiego string-a
+* :no_entry: Komentarze: Licznik komentarzy
+* :no_entry: Komentarze: Edycja pojedynczego komentarza (U)
+* :no_entry: Misc: Potwierdzenie usuwania posta i komentarza
+* :no_entry: Komentarze: Prezentacja fikcyjnych awatarów
+* :no_entry: Posty: Prezentacja czasu stworzenia posta
+* :no_entry: Posty: Prezentacja pojedynczego posta (R)
+* :no_entry: Misc: Stworzenie routing.js
+* :no_entry: Misc: Przekierowanie na stronę główną po usunięciu posta na jego widoku
+* :no_entry: Error handling: Obsługa 404 (not found page)
+* :no_entry: Error handling: Obsługa 404 (brak danych posta do wyświetlenia)
+* :no_entry: Error handling: Zablokowane requesty
+
+## Bonus
+
+* :zap: Misc: Upload obrazka
+* :zap: Misc: Lajki np. nieskończone serduszka
+* :zap: Misc: Użytkownik (logowanie, rejestracja, uprawnienia)
+* :zap: TypeScript (tsconfig.json + ts-loader)
+* :zap: Webpack (moduły, klasy)
+* :zap: Redux
+* :zap: RxJS
+* :zap: React
+* :zap: Angular / inny framework
+* :zap: Testy (jednostkowe & integracyjne & end-to-end)
+* :zap: Storybook
+* :zap: Panel administracyjny
+
 ## Krok po kroku 👣
 
 * Stworzenie pliku `index.html`
