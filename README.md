@@ -1,12 +1,6 @@
 # warsawjs-workshop-2-blog
 
-Testowa aplikacja stworzona na potrzeby `WarsawJS Workshop #2`
-
-<img
-    src="https://warsawjs.com/static/images/logos/logo-warsawjs.svg"
-    width="400"
-    alt="WarsawJS"
-/>
+⛩️ WarsawJS Workshop #2 — JavaScript (Poziom średnio zaawansowany)
 
 ## Features
 
