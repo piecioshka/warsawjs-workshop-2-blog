@@ -1,6 +1,6 @@
 # warsawjs-workshop-2-blog
 
-⛩️ WarsawJS Workshop #2 — JavaScript (Poziom średnio zaawansowany)
+⛩️ WarsawJS Workshop #2 — JavaScript (Intermediate Level)
 
 ## Features
 
