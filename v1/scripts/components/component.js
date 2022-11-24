@@ -4,7 +4,7 @@
     function toHTMLElement(compiled) {
         let parser = new DOMParser();
         let $document = parser.parseFromString(compiled, 'text/html');
-        return $document.querySelector('body').firstElementChild;
+        return $document.body.firstElementChild;
     }
 
     let Component = {

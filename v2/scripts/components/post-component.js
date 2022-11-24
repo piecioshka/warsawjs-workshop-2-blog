@@ -1,8 +1,8 @@
 function toElement(string) {
-    let domParser = new DOMParser();
-    let document = domParser.parseFromString(string, 'text/html');
-    let $fragment = document.createDocumentFragment();
-    Array.from(document.body.children).forEach(function ($element) {
+    let parser = new DOMParser();
+    let doc = parser.parseFromString(string, 'text/html');
+    let $fragment = doc.createDocumentFragment();
+    Array.from(doc.body.children).forEach(function ($element) {
         $fragment.appendChild($element);
     });
     return $fragment;
