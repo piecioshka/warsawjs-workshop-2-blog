@@ -22,7 +22,7 @@ class PostAddForm {
             content: formObject['post-content']
         });
         postListModel.add(postModel);
-        this.trigger('new-post', postModel);
+        this.emit('new-post', postModel);
         postListModel.save();
 
         this.$element.reset();

@@ -22,7 +22,7 @@ class PostEditForm {
         this._postModel._content = formObject['post-content'];
 
         postListModel.save();
-        this.trigger('edit-post');
+        this.emit('edit-post');
     }
 
     render() {
