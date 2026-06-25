@@ -247,3 +247,7 @@
 * <https://unpkg.com/>
 * <https://wzrd.in/>
 * <http://placeskull.com/200/200>
+
+## License
+
+[The MIT License](http://piecioshka.mit-license.org) @ 2026
